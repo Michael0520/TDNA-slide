@@ -90,7 +90,7 @@ const Footer = ({ accent = accentH1 }: { accent?: string }) => {
         color: muted,
       }}
     >
-      <span>From Vibe to Spec · Code for Taiwan · TDF 台東</span>
+      <span>From Vibe to Spec · Code for Taiwan · TDF Taitung</span>
       <span>
         <span style={{ color: accent, fontWeight: 700 }}>{String(current).padStart(2, '0')}</span>
         {' / '}
@@ -253,7 +253,7 @@ const Cover: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH1}>Code for Taiwan · TDF 台東 · 14:00–17:00</Eyebrow>
+      <Eyebrow color={accentH1}>Code for Taiwan · TDF Taitung · 14:00–17:00</Eyebrow>
     </div>
     <div style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}>
       <Title size={150}>
@@ -305,6 +305,39 @@ const Intro: Page = () => (
     </div>
     <img src={michaelAvatar} alt="Michael Lo"
       style={{ width: 380, height: 380, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, animation: 'fadeUp 0.5s ease 0.1s both' }} />
+    <Footer accent={accentH1} />
+  </div>
+);
+
+/* H1-02b 介紹 Code for Taiwan（我的團隊） */
+const C4twPoint = ({ children }: { children: React.ReactNode }) => (
+  <li style={{ fontSize: 32, lineHeight: 1.6, marginBottom: 14 }}>{children}</li>
+);
+
+const AboutCode4tw: Page = () => (
+  <div style={{ ...fill, display: 'flex', alignItems: 'center', gap: 90, padding: 120 }}>
+    <style>{styles}</style>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, flexShrink: 0, animation: 'fadeUp 0.5s ease both' }}>
+      <div style={{ width: 300, height: 300, borderRadius: 32, background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 48, boxSizing: 'border-box' }}>
+        <img src={code4twLogo} alt="Code for Taiwan" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+      </div>
+      <span style={{ fontSize: 26, color: muted, fontFamily: mono }}>codefortaiwan.org</span>
+    </div>
+    <div style={{ flex: 1 }}>
+      <div style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}>
+        <Eyebrow color={accentH1}>MY COMMUNITY</Eyebrow>
+        <Title size={88}>Code for Taiwan</Title>
+      </div>
+      <p style={{ fontSize: 36, color: accentH1, fontStyle: 'italic', marginTop: 24, animation: 'fadeUp 0.5s ease 0.14s both' }}>
+        Where we build programming thinking
+      </p>
+      <ul style={{ fontSize: 32, lineHeight: 1.6, marginTop: 32, paddingLeft: 36, color: 'var(--osd-text)', animation: 'fadeUp 0.5s ease 0.2s both' }}>
+        <C4twPoint>A civic-tech community, free and open</C4twPoint>
+        <C4twPoint>Monthly online meetups to share & learn</C4twPoint>
+        <C4twPoint>Devs, designers, PMs — all backgrounds welcome</C4twPoint>
+        <C4twPoint><span style={{ color: accentH1 }}>Concepts over tools</span> — the why, not just the how</C4twPoint>
+      </ul>
+    </div>
     <Footer accent={accentH1} />
   </div>
 );
@@ -499,7 +532,7 @@ const CheckRow = ({ cmd, expect }: { cmd: string; expect: string }) => (
 const CheckEnv: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="ALL INSTALLED? LET'S CHECK">A version number means OK</PageHead>
+    <PageHead eyebrow="ALL INSTALLED? LET'S CHECK">See a version? You're good</PageHead>
     <div style={{ marginTop: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
       <CheckRow cmd="node -v" expect="shows v24…" />
       <CheckRow cmd="pnpm -v" expect="shows a version" />
@@ -1041,9 +1074,6 @@ const ThankYou: Page = () => (
     <p style={{ fontSize: 38, marginTop: 40, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.14s both' }}>
       You're leaving with: <span style={{ color: accentH3, fontWeight: 700 }}>the URL you shipped</span> + a way to build things with AI.
     </p>
-    <p style={{ fontSize: 32, color: muted, marginTop: 24, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      Reach me: michaello.me · GitHub Michael0520 · here until 17:30
-    </p>
     <Footer accent={accentH3} />
   </div>
 );
@@ -1059,7 +1089,9 @@ export const meta: SlideMeta = {
 export const notes: (string | undefined)[] = [
   // H1
   `下午好，我是 Michael，今天下午這三個小時都會跟大家一起。先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，這裡的精神就是「把作品 ship 出去」。ship 這個字今天會一直出現，意思就是「把東西真的做出來、放到網路上、讓別人連得到」。\n我先講白話一點：三小時後你帶走的，不會只是一個成品，而是一整套「用 AI 把東西做出來」的工作方式。我們分三段走 —— 第一小時把工具裝好、把觀念講清楚；第二小時學怎麼真正用 Claude Code；第三小時你親手做一個網站、推上線。放輕鬆，今天不需要你會寫程式。\n———\nGood afternoon, I'm Michael, and I'll be with you for these three hours. Thank you all for coming out to Zhiben, Taitung. TDF is Taiwan's most special digital-nomad festival, and the whole spirit here is to "ship" — that word will come up a lot today. It just means: actually build something, put it online, let people reach it.\nHere's the promise: in three hours, you won't just leave with a finished product — you'll leave with a whole way of building things with AI. We'll do it in three parts: hour one, install the tools and get the concepts; hour two, learn to actually drive Claude Code; hour three, you build a real website and ship it. Relax — you don't need to know how to code today.`,
-  `簡單介紹我自己：我是 Web Developer，平常就在寫網頁；同時也是 Code for Taiwan 的成員，做開源社群的東西。我的網站是 michaello.me，GitHub 是 Michael0520，等下這些連結 Resource Pack 裡也有，有問題隨時找我。\n———\nQuick intro: I'm a web developer — I build websites for a living — and I'm also a member of Code for Taiwan, working on open-source community stuff. My site is michaello.me, GitHub is Michael0520. These links are in the resource pack too, so reach out anytime.`,
+  `簡單介紹我自己：我是 Web Developer，平常就在寫網頁；同時也是 Code for Taiwan 的成員，做開源社群的東西。我的網站是 michaello.me，GitHub 是 Michael0520。\n先說一下，我的英文沒有很流利，等下講解時如果哪裡卡卡的、或用詞怪怪的，請大家多多包容，也歡迎隨時打斷我、問我。\n———\nQuick intro: I'm a web developer — I build websites for a living — and I'm also a member of Code for Taiwan, doing open-source community work. My site is michaello.me, GitHub is Michael0520.\nAlso, a heads-up: my English isn't very fluent, so if I stumble or use an odd word along the way, please bear with me — and feel free to stop me and ask anytime.`,
+  // AboutCode4tw
+  `這裡花一分鐘介紹一下我的團隊 —— Code for Taiwan。它是一個公民科技社群，免費、開放，每個月有一次線上聚會，大家一起分享、一起學。不管你是工程師、設計師、PM、還是只是有興趣，背景完全不限，都歡迎來。\n我們的核心理念是「重觀念、不只重工具」—— 比起教你用某個工具，更想讓你懂背後的「為什麼」。今天這場 workshop 其實也是這個精神：你不用會寫程式，但你會帶走一套思考方式。官網是 codefortaiwan.org，有興趣回家可以看看。\n———\nLet me take a minute to introduce my team — Code for Taiwan. It's a civic-tech community: free, open, with a monthly online meetup where we share and learn together. Whether you're a developer, designer, PM, or just curious — every background is welcome.\nOur core idea is "concepts over tools" — rather than teaching you one specific tool, we want you to understand the why behind it. Today's workshop carries that same spirit: you don't need to code, but you'll walk away with a way of thinking. The site is codefortaiwan.org — worth a look when you get home.`,
   `動手之前，先做兩個小調查，讓我抓一下大家的程度。第一個問題：過去 12 個月裡，有用 AI 寫過 code 的，請舉手。（停頓，掃一下，記個大概比例）好，放下。第二個：有真的用 AI 把一個網站 ship 上線過的，再舉一次手。（停頓，記比例）OK，大概知道大家的位置了 —— 沒舉手完全沒關係，今天就是從頭帶你做一次。\n———\nBefore we start, two quick questions so I can read the room. First: in the last 12 months, who has written code with AI? Raise your hand. (pause, scan, note roughly) Okay, hands down. Second: who has actually shipped a website live with AI? Raise again. (pause) Great — now I know where everyone is. If you didn't raise your hand, no problem at all — today we'll walk through it from scratch.`,
   `我先給你今天最重要的一條分界線，這條線你聽懂了，今天就值回票價了 —— 用 AI 寫東西，其實有兩種模式（mode）。很多人沒意識到這件事，結果用得卡卡的。我們先把這兩種分清楚。\n———\nLet me give you the single most important line of today — get this and the day is already worth it: building with AI actually comes in two modes. Most people don't realize this, and that's why it feels frustrating. Let's separate the two clearly.`,
   `第一種叫 Vibe Coding —— 你就是跟 AI 一直聊、它給你什麼你就收什麼、能跑起來就好。這種是「AI 主導」，你比較被動。第二種叫 AI Coding —— 你心裡有目標、會主動挑方案、看到不對會拒絕、關鍵時刻會跳進去改。這種是「你主導」。\n兩種沒有誰高誰低，但差別很大。\n———\nThe first is Vibe Coding — you just keep chatting with the AI, take whatever it gives you, and you're happy if it runs. Here the AI leads and you're passive. The second is AI Coding — you have a goal in mind, you actively pick approaches, you say no when something's off, and you step in at key moments. Here you lead.\nNeither is "better," but the difference is huge.`,
@@ -1099,7 +1131,7 @@ export const notes: (string | undefined)[] = [
 ];
 
 export default [
-  Cover, Intro, HandsUp, Divider, VibeVsAI, OneLine, Switch,
+  Cover, Intro, AboutCode4tw, HandsUp, Divider, VibeVsAI, OneLine, Switch,
   SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
   H2Open, OpenClaude, PlanMode, Pains, DoneWhat, SddStages, TryClaude, H2Close,
   H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, SkillsSh, Impeccable, Polish, Recap, ThankYou,
