@@ -447,17 +447,18 @@ const SetupWarp: Page = () => (
 const SetupNode: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="02 · 跑網站的引擎">裝 Node + pnpm</PageHead>
-    <p style={{ fontSize: 30, color: muted, marginTop: 24, animation: 'fadeUp 0.5s ease 0.08s both' }}>
-      到 <span style={{ color: accentH1, fontFamily: mono }}>nodejs.org/zh-tw/download</span> 選 macOS / nvm / pnpm，照官網貼這幾行：
+    <PageHead eyebrow="02 · 跑網站的引擎 + 上傳工具">裝 Node + pnpm + Git</PageHead>
+    <p style={{ fontSize: 28, color: muted, marginTop: 20, animation: 'fadeUp 0.5s ease 0.08s both' }}>
+      Node 到 <span style={{ color: accentH1, fontFamily: mono }}>nodejs.org/zh-tw/download</span> 選 macOS / nvm / pnpm，照官網貼：
     </p>
-    <div style={{ marginTop: 28, animation: 'fadeUp 0.5s ease 0.16s both' }}>
+    <div style={{ marginTop: 24, animation: 'fadeUp 0.5s ease 0.16s both' }}>
       <WindowShell label="Warp · 終端機" accent={accentH1}>
-        <div style={{ color: muted, fontSize: 24 }}># 裝 nvm（Node 版本管理）</div>
+        <div style={{ color: muted, fontSize: 24 }}># Node + pnpm</div>
         <div><span style={{ color: codeGreen }}>$</span> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash</div>
-        <div style={{ marginTop: 12, color: muted, fontSize: 24 }}># 裝 Node + pnpm</div>
         <div><span style={{ color: codeGreen }}>$</span> nvm install 24</div>
         <div><span style={{ color: codeGreen }}>$</span> corepack enable pnpm</div>
+        <div style={{ marginTop: 16, color: muted, fontSize: 24 }}># Git（macOS 多半已內建，確認一下）</div>
+        <div><span style={{ color: codeGreen }}>$</span> git --version</div>
       </WindowShell>
     </div>
     <Footer accent={accentH1} />
@@ -478,7 +479,7 @@ const SetupClaude: Page = () => (
       </WindowShell>
     </div>
     <p style={{ fontSize: 30, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.24s both' }}>
-      （Git 通常 macOS 已內建；沒有的話它會提示你裝。）
+      裝好之後，在 Warp 打 <span style={{ color: accentH1, fontFamily: mono }}>claude</span> 就能啟動。
     </p>
     <Footer accent={accentH1} />
   </div>
