@@ -2,7 +2,6 @@ import { type DesignSystem, type Page, type SlideMeta, useSlidePageNumber } from
 import claudeLogo from '@assets/logos/claude.svg';
 import vercelLogo from '@assets/logos/vercel.svg';
 import githubLogo from '@assets/logos/github.svg';
-import posthogLogo from '@assets/logos/posthog-full.png';
 import code4twLogo from '@assets/logos/code4tw.png';
 import michaelAvatar from '@assets/avatars/michael.jpg';
 import mcpArchitecture from './assets/mcp-architecture.webp';
@@ -1260,10 +1259,10 @@ const S40: Page = () => (
       <Eyebrow color={accentB3}>預告 B3</Eyebrow>
     </div>
     <Title size={96}>
-      你的網站上線了 —<br />但<span style={{ color: accentB3 }}>有沒有人來看？</span>
+      你 ship 了一個網站 —<br />但<span style={{ color: accentB3 }}>下次還能這樣嗎？</span>
     </Title>
     <p style={{ fontSize: 36, color: muted, marginTop: 44, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      B3 一開始就解（PostHog 看訪客），再講 OpenSpec 把 SDD 系統化。<br />
+      B3 把今天學的 SDD 收成一套<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>可重複的流程（OpenSpec）</span>，讓你回家能一直用。<br />
       休息 10 分鐘，<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>16:00 回來</span>。
     </p>
     <Footer accent={accentB3} />
@@ -1282,185 +1281,10 @@ const S41: Page = () => (
       <Eyebrow color={accentB3}>B3 · 驗 · 16:00</Eyebrow>
     </div>
     <Title size={104}>
-      ship 了，<br />但<span style={{ color: accentB3 }}>有人看嗎？</span>
+      ship 了 —<br />然後<span style={{ color: accentB3 }}>怎麼一直變更好？</span>
     </Title>
-    <div style={{ marginTop: 44, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      <HandUp accent={accentB3}>知道自己網站幾人看過的舉手</HandUp>
-    </div>
-    <p style={{ fontSize: 34, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.24s both' }}>
-      ship 不是終點，是<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>起點</span>。前半 PostHog 看訪客、後半 OpenSpec 系統化。
-    </p>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S42 — PostHog 是什麼 */
-const WhyCard = ({ n, body }: { n: string; body: string }) => (
-  <div style={{ flex: 1, background: surface, border: `1px solid ${border}`, borderRadius: 16, padding: 40 }}>
-    <div style={{ fontSize: 28, color: accentB3, fontFamily: mono, marginBottom: 16 }}>{n}</div>
-    <p style={{ fontSize: 30, lineHeight: 1.5, margin: 0 }}>{body}</p>
-  </div>
-);
-
-const S42: Page = () => (
-  <div style={{ ...fill, padding: 120 }}>
-    <style>{styles}</style>
-    <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentB3}>段 2 · [DEMO] 看就好，回家做</Eyebrow>
-      {/* 官方完整 logo（含黑字 wordmark）放白底 bar，深背景上才讀得到 */}
-      <div style={{ display: 'inline-flex', alignItems: 'center', background: '#FFFFFF', borderRadius: 16, padding: '18px 28px', marginBottom: 28 }}>
-        <img src={posthogLogo} alt="PostHog" style={{ height: 56, display: 'block' }} />
-      </div>
-      <Title>看見你的真實訪客</Title>
-    </div>
-    <p style={{ fontSize: 36, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      開源、免費額度大的<span style={{ color: 'var(--osd-text)' }}>產品分析</span>工具。為什麼推薦給新手？
-    </p>
-    <div style={{ display: 'flex', gap: 40, marginTop: 40, animation: 'fadeUp 0.5s ease 0.18s both' }}>
-      <WhyCard n="01" body="免費額度個人站綽綽有餘" />
-      <WhyCard n="02" body="一段 snippet 就接好，不用後端" />
-      <WhyCard n="03" body="從「幾人看」到「怎麼用」全包" />
-    </div>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S43 — 怎麼接 */
-const S43: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="怎麼接（學員看就好，回家做）" eyebrowColor={accentB3}>四步接上你的站</PageHead>
-    <ol style={{ fontSize: 36, lineHeight: 1.7, marginTop: 44, paddingLeft: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <li>到 posthog.com 註冊（免費）</li>
-      <li>它給你<span style={{ color: accentB3 }}>一小段程式碼</span>（snippet）</li>
-      <li>請 Claude 幫你貼進網站（範本已留好位置）</li>
-      <li>重新上線一次</li>
-    </ol>
-    <p style={{ fontSize: 32, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      接好之後，每個來看你網站的人都會自動被記錄下來。
-    </p>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S44 — 看到第一個訪問（dashboard mockup） */
-const Metric = ({ label, value }: { label: string; value: string }) => (
-  <div style={{ flex: 1, background: surface, border: `1px solid ${border}`, borderRadius: 14, padding: 32 }}>
-    <div style={{ fontSize: 26, color: muted, marginBottom: 12 }}>{label}</div>
-    <div style={{ fontSize: 56, fontWeight: 800, color: accentB3, fontFamily: 'var(--osd-font-display)' }}>{value}</div>
-  </div>
-);
-
-const S44: Page = () => (
-  <div style={{ ...fill, padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="講師 dashboard demo" eyebrowColor={accentB3}>看到第一個訪問</PageHead>
-    <div style={{ display: 'flex', gap: 32, marginTop: 64, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <Metric label="Unique visitors" value="248" />
-      <Metric label="Page views" value="1.1k" />
-      <Metric label="行動裝置" value="82%" />
-    </div>
-    <p style={{ fontSize: 32, color: muted, marginTop: 48, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      誰來、來幾次、從哪來、用什麼裝置 — <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>snippet 自己收集，不用寫 code</span>。
-    </p>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S45 — 數據幫你做決定 */
-const DecideRow = ({ obs, act }: { obs: string; act: string }) => (
-  <div style={{ display: 'flex', gap: 24, alignItems: 'center', padding: '22px 0', borderBottom: `1px solid ${border}` }}>
-    <span style={{ fontSize: 32, color: muted, flex: 1 }}>{obs}</span>
-    <span style={{ fontSize: 32, color: accentB3 }}>→</span>
-    <span style={{ fontSize: 32, color: 'var(--osd-text)', fontWeight: 600, flex: 1 }}>{act}</span>
-  </div>
-);
-
-const S45: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="ship 後該做的事" eyebrowColor={accentB3}>不是猜，是看數據</PageHead>
-    <div style={{ marginTop: 44, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <DecideRow obs="80% 從手機進來" act="顧手機版" />
-      <DecideRow obs="都停首頁、沒點聯絡" act="CTA 有問題" />
-    </div>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S46 — 功能全景 */
-const S46: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
-    <style>{styles}</style>
-    <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentB3}>段 3 · 功能導覽</Eyebrow>
-    </div>
-    <Title size={96}>
-      不只看流量。
-    </Title>
-    <p style={{ fontSize: 38, color: muted, marginTop: 44, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      不用全記 — <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>知道有這些武器，需要時回去找</span>。
-    </p>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S47 — 核心 4 */
-const FeatCard = ({ n, name, body }: { n: string; name: string; body: string }) => (
-  <div style={{ flex: 1, background: surface, border: `1px solid ${border}`, borderRadius: 16, padding: 36 }}>
-    <div style={{ fontSize: 26, color: accentB3, fontFamily: mono, marginBottom: 12 }}>{n}</div>
-    <div style={{ fontSize: 32, fontWeight: 700, marginBottom: 14 }}>{name}</div>
-    <p style={{ fontSize: 26, lineHeight: 1.45, color: muted, margin: 0 }}>{body}</p>
-  </div>
-);
-
-const S47: Page = () => (
-  <div style={{ ...fill, padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="核心 4 個功能" eyebrowColor={accentB3}>最常用的四把</PageHead>
-    <div style={{ display: 'flex', gap: 28, marginTop: 56, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <FeatCard n="①" name="Analytics" body="誰來、來幾次、從哪來、什麼裝置" />
-      <FeatCard n="②" name="Session Replay" body="像錄影重播訪客操作，看他卡哪" />
-      <FeatCard n="③" name="Heatmaps" body="點擊疊成熱力圖，看哪裡有人碰" />
-      <FeatCard n="④" name="Funnels" body="設定步驟，看每步流失多少人" />
-    </div>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S48 — 推薦 3 */
-const S48: Page = () => (
-  <div style={{ ...fill, padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="推薦 3 個（之後值得玩）" eyebrowColor={accentB3}>進階但好用</PageHead>
-    <div style={{ display: 'flex', gap: 32, marginTop: 64, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <FeatCard n="⑤" name="Feature Flags" body="不改 code 開關功能 / 灰度發布" />
-      <FeatCard n="⑥" name="A/B Testing" body="自動分流，用數據決定哪個好" />
-      <FeatCard n="⑦" name="Surveys" body="直接在網站彈問卷問訪客" />
-    </div>
-    <Footer accent={accentB3} />
-  </div>
-);
-
-/* S49 — 新手順序 */
-const OrderStep = ({ n, body }: { n: string; body: string }) => (
-  <div style={{ display: 'flex', gap: 28, alignItems: 'center', padding: '22px 0', borderBottom: `1px solid ${border}` }}>
-    <span style={{ fontSize: 30, color: accentB3, fontFamily: mono, width: 120, flexShrink: 0 }}>{n}</span>
-    <span style={{ fontSize: 34, color: 'var(--osd-text)' }}>{body}</span>
-  </div>
-);
-
-const S49: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="新手別貪 · 建議順序" eyebrowColor={accentB3}>怎麼挑</PageHead>
-    <div style={{ marginTop: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <OrderStep n="第一步" body="接上去，看 Analytics（有沒有人來）" />
-      <OrderStep n="第二步" body="看 3–5 個 Session Replay（他們怎麼用）" />
-      <OrderStep n="之後" body="有問題才用 Funnel / Flag / A/B" />
-    </div>
-    <p style={{ fontSize: 34, color: accentB3, fontWeight: 700, marginTop: 40, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      價值不在功能多，在拿它做決定。
+    <p style={{ fontSize: 36, color: muted, marginTop: 44, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
+      ship 不是終點，是<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>起點</span>。真做專案會一直有新需求 —— 最後這段，我把今天學的 SDD 收成一套你回家能一直重複用的流程。
     </p>
     <Footer accent={accentB3} />
   </div>
@@ -1607,10 +1431,10 @@ const S56: Page = () => (
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.12s both' }}>
       <RecapRow tag="B1" color={accentB1} body="懂 — Plan Mode、Desktop 三件套、SDD" />
       <RecapRow tag="B2" color={accentB2} body="做 — 從 template 到 live URL，ship 了" />
-      <RecapRow tag="B3" color={accentB3} body="看到 — PostHog 看訪客、OpenSpec 系統化" />
+      <RecapRow tag="B3" color={accentB3} body="系統化 — 用 OpenSpec 把 SDD 變可重複流程" />
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      回家：這週接 PostHog → 下個月玩 OpenSpec → 半年慢慢吃。
+      回家：這週用 SDD 寫一份 spec → 下個月玩 OpenSpec → 半年慢慢吃。
     </p>
     <Footer accent={accentB3} />
   </div>
@@ -1741,27 +1565,11 @@ export const notes: (string | undefined)[] = [
   // S17d 用 /polish 打磨（B2 動手 + 為何）
   `裝好了，現在用它。回 Desktop 照念：「用 /polish 幫我的個人站打磨設計。」\n為什麼需要它？因為 AI 看過太多類似範本，沒特別講就生出那種「一看就知道是 AI 做的」設計 —— Inter 字體、紫藍漸層、卡片疊卡片。Impeccable 把「好設計」變成 AI 跟你共用的詞彙。除了 /polish，還有 /audit 揪問題、/critique 給評論。\n改完 refresh，比較一下打磨前後 —— 這就是 skill 的威力。`,
   // 37 · S40 B3 預告
-  `你的網站上線了、也改成你的樣子了。但這裡有個你可能還沒想到的問題 —— 到底有沒有人來看？來了看什麼？你完全不知道。\n這個問題 B3 一開始就會解：一個免費工具讓你看見真實訪客；然後我會講 OpenSpec，怎麼把今天學的 SDD 變成你回家能一直重複用的流程。\n現在休息 10 分鐘，16:00 整準時回來。沒 deploy 成功的趁現在找我。`,
-  // 38 · S41 開場：有人看嗎？
-  `歡迎回來。B2 你 ship 了人生第一個由 AI 幫你完成的網站，還順手用一句話改了顏色。\n但我問你一個問題 —— 你的網站上線了，到底有沒有人來看？（停頓）知道自己網站有幾個人看過的，舉手。（多半沒人舉）\n對，這就是重點。大部分人推了網站就再也沒回去看。ship 不是終點，是起點。最後一小時兩件事：前半 PostHog 看訪客，後半 OpenSpec 系統化。`,
-  // 39 · S42 PostHog 是什麼
-  `我用的工具叫 PostHog —— 一個開源、免費額度很大的「產品分析」工具。為什麼推薦給新手？第一，免費額度個人站綽綽有餘；第二，一段 snippet 就接好，不用後端；第三，從「有幾個人看」到「他們怎麼用」全包，不用裝十個工具。`,
-  // 40 · S43 怎麼接
-  `我帶你看怎麼接 —— 你不用當場做，看就好，回家 Resource Pack 有步驟。到 posthog.com 註冊、開一個 project 拿到一段 snippet，把這段貼進你網站的 head（這個 template 已經預留位置），re-deploy。就這樣，接好之後你網站每一個訪問都會自動回報給 PostHog。`,
-  // 41 · S44 看到第一個訪問
-  `我切到我自己的 PostHog dashboard —— 這是我一個真的有在跑的站。看，這裡是訪問人數、來源、用什麼裝置。這些資料你完全不用寫 code，snippet 自己收集。\n（demo：手指 unique visitors / page views / 來源 / 裝置；如果 live 掛了切預錄畫面）`,
-  // 42 · S45 數據幫你做決定
-  `數據的重點不是「好看」，是「幫你做決定」。比如我發現 80% 的人從手機進來，那我就知道手機版要顧好；又比如大家都停在首頁、沒人點到聯絡頁，那我就知道我的 CTA 有問題。\nship 之後該做的事 —— 不是猜，是看數據。`,
-  // 43 · S46 功能全景
-  `很多人以為分析工具就是「看幾個人來」。PostHog 比那多很多。我快速帶你看幾個 —— 你不用全記，知道有這些武器，需要時回去找。`,
-  // 44 · S47 核心 4
-  `四個核心功能。第一，Analytics 流量分析，誰來、從哪來、用什麼裝置，最基本最常看。第二，Session Replay 畫面回放，這個最神奇，它能像錄影一樣重播訪客的操作，你會親眼看到「喔原來他找不到按鈕」。第三，Heatmaps 熱區圖，把所有人的點擊疊成一張熱力圖。第四，Funnels 轉換漏斗，看每一步流失多少人。`,
-  // 45 · S48 推薦 3
-  `再給你三個之後值得玩的。第五，Feature Flags 功能開關，不改 code、不 re-deploy 就能開關功能或灰度發布。第六，A/B Testing，兩個版本讓 PostHog 自動分流、告訴你哪個好，用數據決定不用吵架。第七，Surveys，直接在網站上彈問卷問訪客。`,
-  // 46 · S49 新手順序
-  `功能很多，新手別貪。建議順序：第一步，接上去看 Analytics，有沒有人來；第二步，開 Session Replay 看 3-5 個 replay，他們怎麼用；之後有具體問題了，才去用 Funnel、Flag、A/B。\n數據工具的價值不在功能多，在你拿它做決定。Resource Pack 有完整連結。`,
+  `你的網站上線了、也改成你的樣子了。但今天還沒結束 —— 你會做一個網站了，可是真正做專案，你會一直有新需求、一直要改。\n最後一小時，我會把今天學的 SDD 收成一套你回家能一直重複用的流程，叫 OpenSpec。\n現在休息 10 分鐘，16:00 整準時回來。沒 deploy 成功的趁現在找我。`,
+  // 38 · S41 開場：B3
+  `歡迎回來。B2 你 ship 了人生第一個由 AI 幫你完成的網站，還順手用一句話改了顏色跟設計。\nship 不是終點，是起點 —— 真正做專案你會一直有新需求、一直要改。最後這一小時，我把今天學的 SDD 收成一套可重複的流程，讓你回家能一直用。`,
   // 47 · S50 從 SDD 到 OpenSpec
-  `你現在會 ship、會看數據了。最後一段，我把今天學的 SDD 收成一套你能一直用的流程 —— OpenSpec。\n回到第一小時，我講過 SDD：先把要什麼寫清楚再讓 AI 做，B2 你也用了一份 spec。但那份 spec 是一次性的。真正做專案，你會一直有新需求、一直要改，每次重寫一份散在各處的 spec 很快就亂掉。OpenSpec 解的就是這件事。`,
+  `你現在會用 AI ship、會改設計了。最後一段，我把今天學的 SDD 收成一套你能一直用的流程 —— OpenSpec。\n回到第一小時，我講過 SDD：先把要什麼寫清楚再讓 AI 做，B2 你也用了一份 spec。但那份 spec 是一次性的。真正做專案，你會一直有新需求、一直要改，每次重寫一份散在各處的 spec 很快就亂掉。OpenSpec 解的就是這件事。`,
   // 48 · S51 OpenSpec 是什麼
   `OpenSpec 是一個開源工具，Fission-AI 做的。一句話講：它幫你把「每一次要改什麼」管理成一個個 change，每個 change 都有完整的 spec 和任務拆解，做完了就歸檔。\n你可以想成 —— SDD 是「寫清楚再做」這個習慣，OpenSpec 是把這習慣變成一個資料夾結構加一套指令，讓你跟 AI 每次都照同一套流程走。`,
   // 49 · S52 流程圖
@@ -1773,7 +1581,7 @@ export const notes: (string | undefined)[] = [
   // 52 · S55 為什麼推薦
   `為什麼把這個留到最後、推薦給你？因為今天三小時你學的所有東西 —— Plan Mode、寫 spec、用 MCP 改 —— OpenSpec 把它們串成一條完整的線。你不用每次重新發明流程，照它走就好。而且它不只能管 code，我用它管一場 workshop。\n今天我不帶你動手裝 —— 這是回家作業，Resource Pack 有 getting started。先聽懂「它是把 SDD 系統化的流程」就夠了。`,
   // 53 · S56 三小時收束
-  `三小時到這。回顧你今天帶走的：B1 你學會了人主導的 AI Coding —— Plan Mode、Desktop 三件套、SDD；B2 你親手做到了，從 template 到 live URL，ship 了自己的網站；B3 你看到了怎麼用 PostHog 看見真實訪客、用 OpenSpec 把 SDD 變成流程。\n一條線：ship 出來 → 看見訪客 → 用流程一直 ship 得更好。\n回家順序：這週把網站接上 PostHog，下個月玩 OpenSpec 管一個小專案，Resource Pack 是半年的地圖。`,
+  `三小時到這。回顧你今天帶走的：B1 你學會了人主導的 AI Coding —— Plan Mode、Desktop 三件套、SDD；B2 你親手做到了，從 template 到 live URL，ship 了自己的網站；B3 你看到了怎麼用 OpenSpec 把 SDD 變成一套可重複的流程。\n一條線：把要什麼講清楚 → 親手 ship → 用流程一直 ship 得更好。\n回家順序：這週用 SDD 寫一份 spec，下個月玩 OpenSpec 管一個小專案，Resource Pack 是半年的地圖。`,
   // 54 · S57 紙本回饋
   `我發 Resource Pack，每人一份，裡面夾一張 3 題回饋卡。請花 2 分鐘寫：第一題，今天最有用的一件事？第二題，你回家第一個會做什麼？第三題，1 到 10 推薦給朋友。\n寫完別走，我邊收、邊問 2-3 位口頭分享第二題。（點 2-3 人，各 30-45 秒）沒被點到的別失望，紙本我全部會看。`,
   // 55 · S58 謝謝 + 合照
@@ -1785,6 +1593,6 @@ export default [
   S11, S12, S13, S14, S15, S16, S16b, S17, S18, S19, S20, S21, S22,
   S23, S24, S25, S27, S29, S30, S31, S32,
   S33, S34, S35, S36, S37, S38, S39, S17b, S17c, S17d, S40,
-  S41, S42, S43, S44, S45, S46, S47, S48, S49, S50,
+  S41, S50,
   S51, S52, S53, S54, S55, S56, S57, S58,
 ] satisfies Page[];
