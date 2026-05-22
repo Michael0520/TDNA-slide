@@ -264,7 +264,7 @@ const Cover: Page = () => (
       Ship Your First Personal Site with AI
     </p>
     <p style={{ fontSize: 32, color: muted, marginTop: 16, animation: 'fadeUp 0.5s ease 0.22s both' }}>
-      主講：Michael Lo · Code for Taiwan
+      Host: Michael Lo · Code for Taiwan
     </p>
   </div>
 );
@@ -313,10 +313,10 @@ const Intro: Page = () => (
 const HandsUp: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="先做兩個小調查">換你舉手</PageHead>
+    <PageHead eyebrow="TWO QUICK QUESTIONS">Raise your hand</PageHead>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 40, marginTop: 64, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <HandUp>過去 12 個月，用 AI 寫過 code？</HandUp>
-      <HandUp>用 AI 把網站 ship 上線過？</HandUp>
+      <HandUp>Written code with AI in the last 12 months?</HandUp>
+      <HandUp>Shipped a website live with AI?</HandUp>
     </div>
     <Footer accent={accentH1} />
   </div>
@@ -327,10 +327,10 @@ const Divider: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH1}>今天最重要的一條線</Eyebrow>
+      <Eyebrow color={accentH1}>THE MOST IMPORTANT LINE TODAY</Eyebrow>
     </div>
     <Title size={110}>
-      用 AI 寫東西，<br />其實有<span style={{ color: accentH1 }}>兩種 mode</span>。
+      Building with AI<br />comes in <span style={{ color: accentH1 }}>two modes</span>.
     </Title>
     <Footer accent={accentH1} />
   </div>
@@ -350,12 +350,12 @@ const ModeCard = ({ tag, color, who, lines }: { tag: string; color: string; who:
 const VibeVsAI: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="兩種 mode · 誰主導？">Vibe vs AI Coding</PageHead>
+    <PageHead eyebrow="TWO MODES · WHO LEADS?">Vibe vs AI Coding</PageHead>
     <div style={{ display: 'flex', gap: 48, marginTop: 56, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <ModeCard tag="Vibe Coding" color={accentH1} who="→ AI 主導"
-        lines={['你跟 AI 聊聊聊', 'AI 給什麼，你就收什麼', '能跑就好']} />
-      <ModeCard tag="AI Coding" color={accentH3} who="→ 人主導"
-        lines={['你知道目標', '主動選方案、敢拒絕', '關鍵時刻你介入']} />
+      <ModeCard tag="Vibe Coding" color={accentH1} who="→ AI leads"
+        lines={['You just chat with AI', 'You take whatever it gives', 'Good enough if it runs']} />
+      <ModeCard tag="AI Coding" color={accentH3} who="→ You lead"
+        lines={['You know the goal', 'You pick, you say no', 'You step in when it matters']} />
     </div>
     <Footer accent={accentH1} />
   </div>
@@ -365,12 +365,12 @@ const VibeVsAI: Page = () => (
 const OneLine: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
-    <Title size={104}>
-      <span style={{ color: accentH1 }}>Vibe</span> 是 AI 主導，<br />
-      <span style={{ color: accentH3 }}>AI Coding</span> 是人主導。
+    <Title size={96}>
+      <span style={{ color: accentH1 }}>Vibe</span> = AI leads.<br />
+      <span style={{ color: accentH3 }}>AI Coding</span> = you lead.
     </Title>
     <p style={{ fontSize: 48, color: muted, marginTop: 48, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      AI 是工具，<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>你是決策者</span>。
+      AI is the tool. <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>You are the decision-maker.</span>
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -387,13 +387,13 @@ const SituationCard = ({ color, head, body }: { color: string; head: string; bod
 const Switch: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="不是對立，是兩種 mode">看情境，學會切換</PageHead>
+    <PageHead eyebrow="NOT RIVALS — TWO MODES">Know when to switch</PageHead>
     <div style={{ display: 'flex', gap: 64, marginTop: 56, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <SituationCard color={accentH1} head="用 Vibe" body="玩具、驗證 idea、週末小專案 — 門檻低、產出快。" />
-      <SituationCard color={accentH3} head="用 AI Coding" body="長期維護、要上線給人用、任何正式專案。" />
+      <SituationCard color={accentH1} head="Use Vibe" body="Toys, quick ideas, weekend projects — low effort, fast output." />
+      <SituationCard color={accentH3} head="Use AI Coding" body="Long-term, shipping to real users, any serious project." />
     </div>
     <p style={{ fontSize: 36, color: muted, marginTop: 48, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      今天的目標：帶你<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>從第一種，走到第二種</span>。
+      Today's goal: take you <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>from the first mode to the second</span>.
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -411,15 +411,15 @@ const SetupCard = ({ n, name, sub }: { n: string; name: string; sub: string }) =
 const SetupOverview: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="段 2 · 動手前的準備">先一起裝四個東西</PageHead>
+    <PageHead eyebrow="GET READY BEFORE WE BUILD">Let's install four things</PageHead>
     <div style={{ display: 'flex', gap: 28, marginTop: 56, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <SetupCard n="01" name="Warp" sub="現代終端機" />
-      <SetupCard n="02" name="Node + pnpm" sub="跑網站的引擎" />
-      <SetupCard n="03" name="Git" sub="版本管理 / 上傳" />
-      <SetupCard n="04" name="Claude Code" sub="今天的主角 AI" />
+      <SetupCard n="01" name="Warp" sub="Modern terminal" />
+      <SetupCard n="02" name="Node + pnpm" sub="Engine to run the site" />
+      <SetupCard n="03" name="Git" sub="Version control / upload" />
+      <SetupCard n="04" name="Claude Code" sub="Today's main AI" />
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 48, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      跟著我一步步來，<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>裝不起來就舉手</span>，助教會過去。
+      Follow along step by step. <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>Raise your hand if it won't install</span> — a helper will come over.
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -429,15 +429,15 @@ const SetupOverview: Page = () => (
 const SetupWarp: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="01 · 終端機">裝 Warp</PageHead>
+    <PageHead eyebrow="01 · TERMINAL">Install Warp</PageHead>
     <p style={{ fontSize: 34, color: muted, marginTop: 28, lineHeight: 1.5, animation: 'fadeUp 0.5s ease 0.08s both' }}>
-      一個<span style={{ color: 'var(--osd-text)' }}>更好用的終端機</span>（打指令的黑視窗）— 內建 AI、好看好操作。
+      A <span style={{ color: 'var(--osd-text)' }}>nicer terminal</span> (the black window for typing commands) — AI built in, clean and easy.
     </p>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.16s both' }}>
       <UrlBar url="warp.dev" accent={accentH1} />
     </div>
     <p style={{ fontSize: 30, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.24s both' }}>
-      到官網點 <span style={{ color: accentH1 }}>Download</span> 裝起來。我們一起做 — 裝好的舉手。
+      Go to the site, click <span style={{ color: accentH1 }}>Download</span>, install it. We'll do it together — hand up when done.
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -447,17 +447,17 @@ const SetupWarp: Page = () => (
 const SetupNode: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="02 · 跑網站的引擎 + 上傳工具">裝 Node + pnpm + Git</PageHead>
+    <PageHead eyebrow="02 · ENGINE + UPLOAD TOOL">Install Node + pnpm + Git</PageHead>
     <p style={{ fontSize: 28, color: muted, marginTop: 20, animation: 'fadeUp 0.5s ease 0.08s both' }}>
-      Node 到 <span style={{ color: accentH1, fontFamily: mono }}>nodejs.org/zh-tw/download</span> 選 macOS / nvm / pnpm，照官網貼：
+      For Node, go to <span style={{ color: accentH1, fontFamily: mono }}>nodejs.org/download</span>, pick macOS / nvm / pnpm, and paste:
     </p>
     <div style={{ marginTop: 24, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH1}>
+      <WindowShell label="Warp · Terminal" accent={accentH1}>
         <div style={{ color: muted, fontSize: 24 }}># Node + pnpm</div>
         <div><span style={{ color: codeGreen }}>$</span> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash</div>
         <div><span style={{ color: codeGreen }}>$</span> nvm install 24</div>
         <div><span style={{ color: codeGreen }}>$</span> corepack enable pnpm</div>
-        <div style={{ marginTop: 16, color: muted, fontSize: 24 }}># Git（macOS 多半已內建，確認一下）</div>
+        <div style={{ marginTop: 16, color: muted, fontSize: 24 }}># Git (usually built into macOS — just check)</div>
         <div><span style={{ color: codeGreen }}>$</span> git --version</div>
       </WindowShell>
     </div>
@@ -469,17 +469,17 @@ const SetupNode: Page = () => (
 const SetupClaude: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="03 · 今天的主角">裝 Claude Code</PageHead>
+    <PageHead eyebrow="03 · TODAY'S MAIN TOOL">Install Claude Code</PageHead>
     <p style={{ fontSize: 30, color: muted, marginTop: 24, animation: 'fadeUp 0.5s ease 0.08s both' }}>
-      文件在 <span style={{ color: accentH1, fontFamily: mono }}>code.claude.com/docs/zh-TW</span> — 在 Warp 貼這行就裝好：
+      Docs at <span style={{ color: accentH1, fontFamily: mono }}>code.claude.com/docs</span> — paste this one line in Warp:
     </p>
     <div style={{ marginTop: 28, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH1}>
+      <WindowShell label="Warp · Terminal" accent={accentH1}>
         <div><span style={{ color: codeGreen }}>$</span> curl -fsSL https://claude.ai/install.sh | bash</div>
       </WindowShell>
     </div>
     <p style={{ fontSize: 30, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.24s both' }}>
-      裝好之後，在 Warp 打 <span style={{ color: accentH1, fontFamily: mono }}>claude</span> 就能啟動。
+      Once installed, type <span style={{ color: accentH1, fontFamily: mono }}>claude</span> in Warp to launch it.
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -499,15 +499,15 @@ const CheckRow = ({ cmd, expect }: { cmd: string; expect: string }) => (
 const CheckEnv: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="裝好了嗎？一起檢查">看到版本就 OK</PageHead>
+    <PageHead eyebrow="ALL INSTALLED? LET'S CHECK">A version number means OK</PageHead>
     <div style={{ marginTop: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <CheckRow cmd="node -v" expect="出現版本號 v24…" />
-      <CheckRow cmd="pnpm -v" expect="出現版本號" />
-      <CheckRow cmd="git --version" expect="出現版本號" />
-      <CheckRow cmd="claude --version" expect="出現版本號" />
+      <CheckRow cmd="node -v" expect="shows v24…" />
+      <CheckRow cmd="pnpm -v" expect="shows a version" />
+      <CheckRow cmd="git --version" expect="shows a version" />
+      <CheckRow cmd="claude --version" expect="shows a version" />
     </div>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <HandUp>四個都看到版本的舉手</HandUp>
+      <HandUp>Hand up if you see all four versions</HandUp>
     </div>
     <Footer accent={accentH1} />
   </div>
@@ -518,13 +518,13 @@ const H1Close: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH1}>第一段結束 · 預告</Eyebrow>
+      <Eyebrow color={accentH1}>END OF HOUR 1 · WHAT'S NEXT</Eyebrow>
     </div>
     <Title size={96}>
-      工具到位了。<br />接下來 <span style={{ color: accentH1 }}>學怎麼用</span>。
+      Tools ready.<br />Next: <span style={{ color: accentH1 }}>how to use them</span>.
     </Title>
     <p style={{ fontSize: 36, color: muted, marginTop: 44, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      第二段：怎麼<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>驅動 Claude Code</span> + 一個讓 AI 變可靠的關鍵習慣（SDD）。
+      Hour 2: how to <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>drive Claude Code</span> + the one habit that makes AI reliable (SDD).
     </p>
     <Footer accent={accentH1} />
   </div>
@@ -539,10 +539,10 @@ const H2Open: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH2}>第二小時 · AI Coding · 15:00</Eyebrow>
+      <Eyebrow color={accentH2}>HOUR 2 · AI CODING · 15:00</Eyebrow>
     </div>
     <Title size={104}>
-      工具會了，<br />現在學<span style={{ color: accentH2 }}>怎麼驅動它</span>。
+      Tools ready —<br />now learn to <span style={{ color: accentH2 }}>drive them</span>.
     </Title>
     <Footer accent={accentH2} />
   </div>
@@ -552,15 +552,15 @@ const H2Open: Page = () => (
 const OpenClaude: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="在 Warp 裡打一個字" eyebrowColor={accentH2}>打開 Claude Code</PageHead>
+    <PageHead eyebrow="TYPE ONE WORD IN WARP" eyebrowColor={accentH2}>Open Claude Code</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH2}>
+      <WindowShell label="Warp · Terminal" accent={accentH2}>
         <div><span style={{ color: codeGreen }}>$</span> claude</div>
-        <div style={{ marginTop: 12, color: codeGreen }}>● 你好！要我幫你做什麼？</div>
+        <div style={{ marginTop: 12, color: codeGreen }}>● Hi! What can I help you build?</div>
       </WindowShell>
     </div>
     <p style={{ fontSize: 34, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      然後就<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>用講話的方式</span>跟它說你要什麼 — 不用記指令。
+      Then just <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>talk to it</span> in plain words — no commands to memorize.
     </p>
     <Footer accent={accentH2} />
   </div>
@@ -570,28 +570,28 @@ const OpenClaude: Page = () => (
 const PlanMode: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="最該學的一個習慣" eyebrowColor={accentH2}>Plan Mode</PageHead>
+    <PageHead eyebrow="THE ONE HABIT TO LEARN" eyebrowColor={accentH2}>Plan Mode</PageHead>
     <div style={{ display: 'flex', gap: 64, marginTop: 56, alignItems: 'flex-start' }}>
       <div style={{ flex: 1, animation: 'fadeUp 0.5s ease 0.1s both' }}>
         <WindowShell label="Claude Code" accent={accentH2}>
-          <div style={{ color: muted }}>連按兩次 <span style={{ color: accentH2 }}>Shift + Tab</span></div>
-          <div style={{ marginTop: 16, color: codeGreen }}>→ AI 先給計畫，不直接動手</div>
-          <div style={{ color: codeText }}>　做什麼 · 改哪些檔 · 什麼順序</div>
-          <div style={{ marginTop: 16, color: codeText }}>你看過、按核可 → 才執行</div>
+          <div style={{ color: muted }}>Press <span style={{ color: accentH2 }}>Shift + Tab</span> twice</div>
+          <div style={{ marginTop: 16, color: codeGreen }}>→ AI gives a plan first, no action yet</div>
+          <div style={{ color: codeText }}>　what · which files · what order</div>
+          <div style={{ marginTop: 16, color: codeText }}>You review, approve → then it runs</div>
         </WindowShell>
       </div>
       <div style={{ flex: 1, animation: 'fadeUp 0.5s ease 0.2s both' }}>
         <p style={{ fontSize: 36, lineHeight: 1.55, marginTop: 0 }}>
-          動手前先給計畫，就是 vibe coding <span style={{ color: accentH2 }}>不會做的事</span>。
+          Plan before acting — the thing vibe coding <span style={{ color: accentH2 }}>never does</span>.
         </p>
         <ul style={{ fontSize: 32, lineHeight: 1.6, paddingLeft: 36, color: muted }}>
-          <li>AI 想偏了，你在計畫階段就擋下</li>
-          <li>核可後不會邊做邊發明</li>
+          <li>AI drifts? You catch it at the plan stage</li>
+          <li>No improvising once approved</li>
         </ul>
       </div>
     </div>
     <p style={{ fontSize: 40, color: accentH2, fontWeight: 700, marginTop: 40, animation: 'fadeUp 0.5s ease 0.28s both' }}>
-      動手前先給計畫，不要邊做邊發明。
+      Plan before acting. Don't improvise as you go.
     </p>
     <Footer accent={accentH2} />
   </div>
@@ -609,11 +609,11 @@ const PainCard = ({ n, head, body }: { n: string; head: string; body: string }) 
 const Pains: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="為什麼需要 SDD" eyebrowColor={accentH2}>只用嘴巴聊的三個痛</PageHead>
+    <PageHead eyebrow="WHY WE NEED SDD" eyebrowColor={accentH2}>Three pains of just chatting</PageHead>
     <div style={{ display: 'flex', gap: 48, marginTop: 64, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <PainCard n="01" head="風格不一致" body="今天聊的跟明天聊的長不一樣，因為每次說法都不同。" />
-      <PainCard n="02" head="漏掉狀況" body="只做了正常情況；沒網路、欄位空白全沒處理。" />
-      <PainCard n="03" head="假性自信" body="AI 很開心說「做完了！」— 但做完什麼？" />
+      <PainCard n="01" head="Inconsistent" body="Today's result differs from tomorrow's — you phrase it differently each time." />
+      <PainCard n="02" head="Misses cases" body="Only the happy path; no offline, no empty fields handled." />
+      <PainCard n="03" head="False confidence" body="AI happily says “Done!” — but done with what?" />
     </div>
     <Footer accent={accentH2} />
   </div>
@@ -624,13 +624,13 @@ const DoneWhat: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <p style={{ fontSize: 48, color: muted, margin: 0, animation: 'fadeUp 0.5s ease both' }}>
-      AI 說「做完了」→ 你要反問：
+      AI says “Done” → you ask back:
     </p>
-    <Title size={150}>
-      <span style={{ color: accentH2 }}>做完什麼？</span>
+    <Title size={140}>
+      <span style={{ color: accentH2 }}>Done with what?</span>
     </Title>
     <p style={{ fontSize: 38, color: muted, lineHeight: 1.6, maxWidth: 1500, marginTop: 40, animation: 'fadeUp 0.5s ease 0.18s both' }}>
-      答不出來 = 你從頭沒定義「什麼叫做完」。SDD = <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>動手前先把「做完」的標準寫下來</span>。
+      Can't answer = you never defined “done”. SDD = <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>write down what “done” means before you start</span>.
     </p>
     <Footer accent={accentH2} />
   </div>
@@ -648,14 +648,14 @@ const StageCard = ({ n, head, body }: { n: string; head: string; body: string })
 const SddStages: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="SDD 三階段 · 用人話寫就好" eyebrowColor={accentH2}>把「要什麼」講清楚</PageHead>
+    <PageHead eyebrow="SDD IN 3 STAGES · PLAIN WORDS" eyebrowColor={accentH2}>Spell out what you want</PageHead>
     <div style={{ display: 'flex', gap: 40, marginTop: 56, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <StageCard n="①" head="釐清要什麼" body="誰、為了什麼。定方向。" />
-      <StageCard n="②" head="怎麼做" body="版型 / 區塊 / 限制。定範圍。" />
-      <StageCard n="③" head="拆可驗任務" body="每塊都能說「做到了沒」。" />
+      <StageCard n="①" head="What you want" body="Who, and why. Sets the direction." />
+      <StageCard n="②" head="How to do it" body="Layout / sections / limits. Sets the scope." />
+      <StageCard n="③" head="Checkable tasks" body="Each one can be marked done or not." />
     </div>
     <p style={{ fontSize: 34, color: accentH2, fontWeight: 700, marginTop: 44, animation: 'fadeUp 0.5s ease 0.22s both' }}>
-      寫清楚 → AI 做 → 拿它來驗 → ship
+      Write it clearly → AI builds → check it → ship
     </p>
     <Footer accent={accentH2} />
   </div>
@@ -665,16 +665,16 @@ const SddStages: Page = () => (
 const TryClaude: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 試一下手感" eyebrowColor={accentH2}>先跟它說一句話</PageHead>
+    <PageHead eyebrow="[DO] GET A FEEL FOR IT" eyebrowColor={accentH2}>Say one thing to it</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
       <WindowShell label="Claude Code" accent={accentH2}>
         <div style={{ fontFamily: 'var(--osd-font-body)', fontSize: 30, lineHeight: 1.6, color: 'var(--osd-text)' }}>
-          幫我在桌面建一個資料夾叫 <span style={{ color: accentH2 }}>my-first</span>，裡面放一個寫著我名字的文字檔。
+          Create a folder on my Desktop called <span style={{ color: accentH2 }}>my-first</span> with a text file that has my name in it.
         </div>
       </WindowShell>
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      看它先給計畫、你按核可、它動手 — <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>這就是 AI Coding 的手感</span>。
+      It plans, you approve, it acts — <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>that's the feel of AI Coding</span>.
     </p>
     <Footer accent={accentH2} />
   </div>
@@ -685,14 +685,14 @@ const H2Close: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH3}>第二段結束 · 預告</Eyebrow>
+      <Eyebrow color={accentH3}>END OF HOUR 2 · WHAT'S NEXT</Eyebrow>
     </div>
     <Title size={96}>
-      會用了 —<br />接下來<span style={{ color: accentH3 }}>做一個真網站</span>。
+      You can use it —<br />now <span style={{ color: accentH3 }}>build a real site</span>.
     </Title>
     <p style={{ fontSize: 36, color: muted, marginTop: 44, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      第三段：clone 一個範本 → 用 Claude Code 改成你的 → 推上線。<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>離開前每人有自己的網址。</span><br />
-      休息 10 分鐘，16:00 回來。
+      Hour 3: clone a template → make it yours with Claude Code → ship it. <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>Everyone leaves with a live URL.</span><br />
+      10-min break, back at 16:00.
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -707,13 +707,13 @@ const H3Open: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <div style={{ animation: 'fadeUp 0.5s ease both' }}>
-      <Eyebrow color={accentH3}>第三小時 · 改樣板 · 16:00</Eyebrow>
+      <Eyebrow color={accentH3}>HOUR 3 · BUILD FROM TEMPLATE · 16:00</Eyebrow>
     </div>
     <Title size={104}>
-      clone 一個範本，<br /><span style={{ color: accentH3 }}>改成你的</span>。
+      Clone a template,<br /><span style={{ color: accentH3 }}>make it yours</span>.
     </Title>
     <p style={{ fontSize: 36, color: muted, marginTop: 44, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      全程動手：抓範本 → 用 Claude Code 改 → 推上線。<span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>離開前每人有自己的網址。</span>
+      Hands-on all the way: grab the template → edit with Claude Code → ship. <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>Everyone leaves with a live URL.</span>
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -732,15 +732,15 @@ const SpecBlock = ({ head, lines }: { head: string; lines: string[] }) => (
 const SpecWalk: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="動手前 · 先看一份 spec" eyebrowColor={accentH3}>這是一份真的 spec</PageHead>
+    <PageHead eyebrow="BEFORE WE BUILD · READ A SPEC" eyebrowColor={accentH3}>This is a real spec</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.12s both' }}>
       <WindowShell label="spec.md" accent={accentH3}>
         <div style={{ fontSize: 26, lineHeight: 1.45 }}>
-          <SpecBlock head="Goal" lines={['讓人 5 分鐘內認識我']} />
-          <SpecBlock head="Outcomes" lines={['知道我是誰、做什麼', '看到代表作品', '找到聯絡方式']} />
-          <SpecBlock head="Non-goals" lines={['不放完整 portfolio · 不寫 blog']} />
-          <SpecBlock head="Constraints" lines={['手機可讀 · 3 秒載完']} />
-          <SpecBlock head="Success criteria" lines={['5 個朋友看完能介紹我的工作']} />
+          <SpecBlock head="Goal" lines={['Let people know me in 5 minutes']} />
+          <SpecBlock head="Outcomes" lines={['Know who I am & what I do', 'See my best work', 'Find how to contact me']} />
+          <SpecBlock head="Non-goals" lines={['No full portfolio · no blog']} />
+          <SpecBlock head="Constraints" lines={['Mobile-readable · loads in 3s']} />
+          <SpecBlock head="Success criteria" lines={['5 friends can describe my work after seeing it']} />
         </div>
       </WindowShell>
     </div>
@@ -759,11 +759,11 @@ const MissingRow = ({ miss, result }: { miss: string; result: string }) => (
 const SpecMissing: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="每一塊缺了 AI 都自由發揮" eyebrowColor={accentH3}>這 5 塊是給 AI 的契約</PageHead>
+    <PageHead eyebrow="MISS A BLOCK, AI IMPROVISES" eyebrowColor={accentH3}>These 5 blocks are AI's contract</PageHead>
     <div style={{ marginTop: 44, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <MissingRow miss="缺 Goal" result="做出一般的 portfolio" />
-      <MissingRow miss="缺 Non-goals" result="加一堆你沒要的功能" />
-      <MissingRow miss="缺 Success criteria" result="你不知道 OK 沒" />
+      <MissingRow miss="No Goal" result="builds a generic portfolio" />
+      <MissingRow miss="No Non-goals" result="adds features you never wanted" />
+      <MissingRow miss="No Success criteria" result="you never know if it's OK" />
     </div>
     <Footer accent={accentH3} />
   </div>
@@ -773,15 +773,15 @@ const SpecMissing: Page = () => (
 const CloneStep: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] Step 1 · clone" eyebrowColor={accentH3}>把範本抓到電腦</PageHead>
+    <PageHead eyebrow="[DO] STEP 1 · CLONE" eyebrowColor={accentH3}>Grab the template</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH3}>
+      <WindowShell label="Warp · Terminal" accent={accentH3}>
         <div><span style={{ color: codeGreen }}>$</span> git clone https://github.com/Michael0520/portfolio-workshop.git</div>
         <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> cd portfolio-workshop</div>
       </WindowShell>
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 32, lineHeight: 1.5, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <span style={{ color: 'var(--osd-text)' }}>clone</span> = 把網路上的範本整包複製到你電腦。卡住的舉手。
+      <span style={{ color: 'var(--osd-text)' }}>clone</span> = copy the whole template from the web onto your computer. Hand up if stuck.
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -791,19 +791,19 @@ const CloneStep: Page = () => (
 const DevStep: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] Step 2 · 跑起來" eyebrowColor={accentH3}>裝套件，看範本</PageHead>
+    <PageHead eyebrow="[DO] STEP 2 · RUN IT" eyebrowColor={accentH3}>Install & see the template</PageHead>
     <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH3}>
+      <WindowShell label="Warp · Terminal" accent={accentH3}>
         <div><span style={{ color: codeGreen }}>$</span> pnpm install</div>
         <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> pnpm dev</div>
         <div style={{ marginTop: 12, color: codeGreen, display: 'flex', alignItems: 'center', gap: 10 }}>
           <Icon name="check" size={28} color={codeGreen} /> Ready
         </div>
-        <div style={{ color: muted }}>→ 打開瀏覽器看 localhost:3000</div>
+        <div style={{ color: muted }}>→ open your browser at localhost:3000</div>
       </WindowShell>
     </div>
     <div style={{ marginTop: 28, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <HandUp accent={accentH3}>看到範本網站的舉手</HandUp>
+      <HandUp accent={accentH3}>Hand up when you see the template site</HandUp>
     </div>
     <Footer accent={accentH3} />
   </div>
@@ -813,18 +813,18 @@ const DevStep: Page = () => (
 const EditResume: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 用 Claude Code 改成你的" eyebrowColor={accentH3}>一句話改個人資料</PageHead>
+    <PageHead eyebrow="[DO] MAKE IT YOURS WITH CLAUDE CODE" eyebrowColor={accentH3}>Edit your info in one line</PageHead>
     <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Claude Code（在 portfolio-workshop 資料夾）" accent={accentH3}>
+      <WindowShell label="Claude Code (inside portfolio-workshop)" accent={accentH3}>
         <div style={{ fontFamily: 'var(--osd-font-body)', fontSize: 30, lineHeight: 1.65, color: 'var(--osd-text)' }}>
-          幫我把這個網站的名字改成 <span style={{ color: accentH3 }}>[你的名字]</span>、
-          所在城市改成 <span style={{ color: accentH3 }}>[你住的城市]</span>、
-          自我介紹改成 <span style={{ color: accentH3 }}>[一句話介紹你自己]</span>。
+          Change this site's name to <span style={{ color: accentH3 }}>[your name]</span>,
+          city to <span style={{ color: accentH3 }}>[your city]</span>,
+          and the intro to <span style={{ color: accentH3 }}>[one line about you]</span>.
         </div>
       </WindowShell>
     </div>
     <div style={{ marginTop: 28, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <HandUp accent={accentH3}>重新整理網頁、看到自己資料的舉手</HandUp>
+      <HandUp accent={accentH3}>Refresh the page — hand up when you see your info</HandUp>
     </div>
     <Footer accent={accentH3} />
   </div>
@@ -834,11 +834,11 @@ const EditResume: Page = () => (
 const GithubRepo: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 把成果放上 GitHub" eyebrowColor={accentH3}>開一個新 repo</PageHead>
+    <PageHead eyebrow="[DO] PUT IT ON GITHUB" eyebrowColor={accentH3}>Create a new repo</PageHead>
     <ol style={{ fontSize: 36, lineHeight: 1.7, marginTop: 44, paddingLeft: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <li>到 <span style={{ color: accentH3, fontFamily: mono }}>github.com/new</span></li>
-      <li>命名（例如 <span style={{ fontFamily: mono }}>my-portfolio</span>）</li>
-      <li>選 <span style={{ color: accentH3 }}>Public</span>、<span style={{ color: accentH3 }}>不勾</span>任何初始化</li>
+      <li>Go to <span style={{ color: accentH3, fontFamily: mono }}>github.com/new</span></li>
+      <li>Name it (e.g. <span style={{ fontFamily: mono }}>my-portfolio</span>)</li>
+      <li>Choose <span style={{ color: accentH3 }}>Public</span>, <span style={{ color: accentH3 }}>don't check</span> any init option</li>
       <li>Create</li>
     </ol>
     <Footer accent={accentH3} />
@@ -849,15 +849,15 @@ const GithubRepo: Page = () => (
 const PushStep: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 推上去" eyebrowColor={accentH3}>複製 GitHub 給的指令</PageHead>
+    <PageHead eyebrow="[DO] PUSH IT UP" eyebrowColor={accentH3}>Copy the commands GitHub gives you</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH3}>
-        <div><span style={{ color: codeGreen }}>$</span> git remote add origin &lt;你的 repo 網址&gt;</div>
+      <WindowShell label="Warp · Terminal" accent={accentH3}>
+        <div><span style={{ color: codeGreen }}>$</span> git remote add origin &lt;your repo URL&gt;</div>
         <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> git push -u origin main</div>
       </WindowShell>
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      不會打也可以請 Claude Code 幫你推。卡住的舉手。
+      Don't want to type? Just ask Claude Code to push for you. Hand up if stuck.
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -874,7 +874,7 @@ const DeployFlow = () => (
       <div style={{ width: 160, height: 160, borderRadius: 24, background: surface, border: `1px solid ${accentH3}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: accentH3 }}>
         <Icon name="globe" size={60} color={accentH3} strokeWidth={1.8} />
       </div>
-      <span style={{ fontSize: 28, fontWeight: 600, color: accentH3 }}>你的網址</span>
+      <span style={{ fontSize: 28, fontWeight: 600, color: accentH3 }}>Your URL</span>
     </div>
   </div>
 );
@@ -882,13 +882,13 @@ const DeployFlow = () => (
 const DeployStep: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 上線" eyebrowColor={accentH3}>Vercel 自動部署</PageHead>
+    <PageHead eyebrow="[DO] GO LIVE" eyebrowColor={accentH3}>Auto-deploy with Vercel</PageHead>
     <div style={{ marginTop: 48, animation: 'fadeUp 0.5s ease 0.12s both' }}>
       <DeployFlow />
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 56, display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center', animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      vercel.com → New Project → Import repo → Deploy。約 30 秒。
-      <span style={{ color: accentH3, display: 'inline-flex', alignItems: 'center', gap: 8 }}>成功舉手 <Icon name="hand" size={28} color={accentH3} /></span>
+      vercel.com → New Project → Import repo → Deploy. ~30 seconds.
+      <span style={{ color: accentH3, display: 'inline-flex', alignItems: 'center', gap: 8 }}>Hand up when live <Icon name="hand" size={28} color={accentH3} /></span>
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -899,32 +899,13 @@ const YouDidIt: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
     <Title size={140}>
-      你<span style={{ color: accentH3 }}>做到了</span>。
+      You <span style={{ color: accentH3 }}>did it</span>.
     </Title>
     <p style={{ fontSize: 44, marginTop: 40, animation: 'fadeUp 0.5s ease 0.14s both' }}>
-      你有自己的網址了。
+      You have your own URL now.
     </p>
     <p style={{ fontSize: 36, color: muted, marginTop: 24, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      ① 貼共享白板互看　② 截圖分享 — 這就是 <span style={{ color: accentH3, fontWeight: 700 }}>ship 的感覺</span>。
-    </p>
-    <Footer accent={accentH3} />
-  </div>
-);
-
-/* H3-11 一句話改主色 */
-const ChangeColor: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="[DO] 第一次用一句話改設計" eyebrowColor={accentH3}>改你的主色</PageHead>
-    <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Claude Code" accent={accentH3}>
-        <div style={{ fontFamily: 'var(--osd-font-body)', fontSize: 30, lineHeight: 1.6, color: 'var(--osd-text)' }}>
-          幫我把網站的主色改成 <span style={{ color: accentH3 }}>[深藍色]</span>、背景換成 <span style={{ color: accentH3 }}>[米白色]</span>。
-        </div>
-      </WindowShell>
-    </div>
-    <p style={{ fontSize: 34, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      重新整理就看到變化 — <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>你完全不用懂程式</span>。
+      ① Post it on the shared board　② Screenshot & share — this is <span style={{ color: accentH3, fontWeight: 700 }}>what shipping feels like</span>.
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -943,17 +924,17 @@ const RankRow = ({ rank, name, owner, installs, hot = false }: { rank: string; n
 const SkillsSh: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="想讓網站更好看？裝個 skill" eyebrowColor={accentH3}>skills.sh · skill 生態</PageHead>
+    <PageHead eyebrow="WANT IT NICER? ADD A SKILL" eyebrowColor={accentH3}>skills.sh · skill ecosystem</PageHead>
     <div style={{ display: 'flex', gap: 56, marginTop: 44, alignItems: 'flex-start' }}>
       <div style={{ flex: 1, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-        <WindowShell label="Claude Code 也能裝 skill" accent={accentH3}>
+        <WindowShell label="Claude Code can add skills too" accent={accentH3}>
           <div style={{ color: codeText }}><span style={{ color: codeGreen }}>$</span> npx skills add <span style={{ color: accentH3 }}>&lt;package&gt;</span></div>
-          <div style={{ color: muted, fontSize: 24, paddingLeft: 28 }}>裝一個 skill = 多一組能力</div>
+          <div style={{ color: muted, fontSize: 24, paddingLeft: 28 }}>add a skill = gain a new ability</div>
         </WindowShell>
-        <p style={{ fontSize: 26, color: muted, marginTop: 24 }}>到 <span style={{ fontFamily: mono }}>skills.sh</span> 逛 · Vercel 做的開放目錄</p>
+        <p style={{ fontSize: 26, color: muted, marginTop: 24 }}>Browse <span style={{ fontFamily: mono }}>skills.sh</span> · open directory by Vercel</p>
       </div>
       <div style={{ flex: 1, animation: 'fadeUp 0.5s ease 0.18s both' }}>
-        <div style={{ fontSize: 24, letterSpacing: '0.15em', color: muted, marginBottom: 8 }}>熱門排行</div>
+        <div style={{ fontSize: 24, letterSpacing: '0.15em', color: muted, marginBottom: 8 }}>TOP INSTALLS</div>
         <RankRow rank="1" name="find-skills" owner="vercel-labs" installs="1.5M" hot />
         <RankRow rank="2" name="frontend-design" owner="anthropics" installs="421K" />
         <RankRow rank="3" name="react-best-practices" owner="vercel-labs" installs="389K" />
@@ -974,19 +955,19 @@ const StatBox = ({ value, label }: { value: string; label: string }) => (
 const Impeccable: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 一起裝這個設計 skill" eyebrowColor={accentH3}>Impeccable</PageHead>
+    <PageHead eyebrow="[DO] ADD THIS DESIGN SKILL" eyebrowColor={accentH3}>Impeccable</PageHead>
     <p style={{ fontSize: 38, lineHeight: 1.5, marginTop: 28, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <span style={{ color: accentH3 }}>教你的 AI 設計品味</span>的 skill — 演化自 Anthropic 的 frontend-design。
+      A skill that <span style={{ color: accentH3 }}>teaches your AI design taste</span> — evolved from Anthropic's frontend-design.
     </p>
     <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-      <WindowShell label="Warp · 終端機" accent={accentH3}>
+      <WindowShell label="Warp · Terminal" accent={accentH3}>
         <span style={{ color: codeGreen }}>$</span> npx skills add <span style={{ color: accentH3 }}>pbakaus/impeccable</span>
       </WindowShell>
     </div>
     <div style={{ display: 'flex', gap: 32, marginTop: 32, animation: 'fadeUp 0.5s ease 0.22s both' }}>
-      <StatBox value="23" label="設計指令（/audit /polish …）" />
-      <StatBox value="7" label="參考領域（字體 / 色彩 …）" />
-      <StatBox value="27" label="反模式偵測規則" />
+      <StatBox value="23" label="design commands (/audit /polish …)" />
+      <StatBox value="7" label="reference domains (type / color …)" />
+      <StatBox value="27" label="anti-pattern rules" />
     </div>
     <Footer accent={accentH3} />
   </div>
@@ -1000,25 +981,25 @@ const GenericTag = ({ children }: { children: React.ReactNode }) => (
 const Polish: Page = () => (
   <div style={{ ...fill, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] 用它打磨你的網站" eyebrowColor={accentH3}>擺脫「AI 味」</PageHead>
+    <PageHead eyebrow="[DO] POLISH YOUR SITE WITH IT" eyebrowColor={accentH3}>Lose the “AI look”</PageHead>
     <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.08s both' }}>
       <WindowShell label="Claude Code" accent={accentH3}>
         <div style={{ fontSize: 28, lineHeight: 1.6, color: 'var(--osd-text)', fontFamily: 'var(--osd-font-body)' }}>
-          用 <span style={{ fontFamily: mono, color: accentH3 }}>/polish</span> 幫我的個人站打磨設計。
+          Use <span style={{ fontFamily: mono, color: accentH3 }}>/polish</span> to refine my personal site's design.
         </div>
       </WindowShell>
     </div>
     <div style={{ display: 'flex', gap: 48, marginTop: 32, animation: 'fadeUp 0.5s ease 0.16s both' }}>
       <div style={{ flex: 1, background: surface, border: `1px solid ${border}`, borderRadius: 14, padding: '28px 36px' }}>
-        <div style={{ fontSize: 26, fontWeight: 700, color: muted, marginBottom: 16 }}>沒有它：generic AI 味</div>
-        <GenericTag>Inter 字體</GenericTag>
-        <GenericTag>紫藍漸層</GenericTag>
-        <GenericTag>卡片疊卡片</GenericTag>
+        <div style={{ fontSize: 26, fontWeight: 700, color: muted, marginBottom: 16 }}>Without it: generic AI look</div>
+        <GenericTag>Inter font</GenericTag>
+        <GenericTag>purple-blue gradient</GenericTag>
+        <GenericTag>cards on cards</GenericTag>
       </div>
       <div style={{ flex: 1, background: surface, border: `1px solid ${accentH3}`, borderRadius: 14, padding: '28px 36px' }}>
-        <div style={{ fontSize: 26, fontWeight: 700, color: accentH3, marginBottom: 16 }}>有它：給 AI 設計詞彙</div>
+        <div style={{ fontSize: 26, fontWeight: 700, color: accentH3, marginBottom: 16 }}>With it: design vocabulary for AI</div>
         <p style={{ fontSize: 28, lineHeight: 1.5, margin: 0 }}>
-          <span style={{ color: accentH3, fontFamily: mono }}>/audit</span> 揪問題　<span style={{ color: accentH3, fontFamily: mono }}>/critique</span> 給評論
+          <span style={{ color: accentH3, fontFamily: mono }}>/audit</span> finds issues　<span style={{ color: accentH3, fontFamily: mono }}>/critique</span> gives feedback
         </p>
       </div>
     </div>
@@ -1037,106 +1018,89 @@ const RecapRow = ({ tag, color, body }: { tag: string; color: string; body: stri
 const Recap: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="三小時收束" eyebrowColor={accentH3}>你帶走了什麼</PageHead>
+    <PageHead eyebrow="WRAPPING UP THREE HOURS" eyebrowColor={accentH3}>What you take home</PageHead>
     <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <RecapRow tag="第一小時" color={accentH1} body="裝好工具 + 懂 Vibe vs AI Coding" />
-      <RecapRow tag="第二小時" color={accentH2} body="會用 Claude Code + SDD 把要什麼講清楚" />
-      <RecapRow tag="第三小時" color={accentH3} body="從範本到 live URL，ship 了自己的網站" />
+      <RecapRow tag="Hour 1" color={accentH1} body="Tools installed + got Vibe vs AI Coding" />
+      <RecapRow tag="Hour 2" color={accentH2} body="Can drive Claude Code + spell out what you want (SDD)" />
+      <RecapRow tag="Hour 3" color={accentH3} body="Template to live URL — shipped your own site" />
     </div>
     <p style={{ fontSize: 32, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      回家：用今天的工作方式，把你下一個想法也 ship 出來。
+      At home: use this workflow to ship your next idea too.
     </p>
     <Footer accent={accentH3} />
   </div>
 );
 
-/* H3-16 紙本回饋 */
-const Feedback: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="全員寫 + 點 2–3 人分享" eyebrowColor={accentH3}>三題回饋</PageHead>
-    <ol style={{ fontSize: 38, lineHeight: 1.8, marginTop: 44, paddingLeft: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <li>今天最有用的一件事？</li>
-      <li>回家第一個會做什麼？</li>
-      <li>1–10 推薦給朋友</li>
-    </ol>
-    <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <HandUp accent={accentH3}>寫完別走，我邊收邊問</HandUp>
-    </div>
-    <Footer accent={accentH3} />
-  </div>
-);
-
-/* H3-17 謝謝 + 合照 */
+/* H3-16 謝謝 */
 const ThankYou: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
-    <Title size={140}>
-      <span style={{ color: accentH3 }}>謝謝</span>。合照！
+    <Title size={150}>
+      <span style={{ color: accentH3 }}>Thank you!</span>
     </Title>
     <p style={{ fontSize: 38, marginTop: 40, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.14s both' }}>
-      帶走的：<span style={{ color: accentH3, fontWeight: 700 }}>你 ship 的網址</span> + 一套用 AI 做東西的工作方式。
+      You're leaving with: <span style={{ color: accentH3, fontWeight: 700 }}>the URL you shipped</span> + a way to build things with AI.
     </p>
     <p style={{ fontSize: 32, color: muted, marginTop: 24, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      聯絡方式：michaello.me · GitHub Michael0520 · 留場到 17:30
+      Reach me: michaello.me · GitHub Michael0520 · here until 17:30
     </p>
     <Footer accent={accentH3} />
   </div>
 );
 
 export const meta: SlideMeta = {
-  title: 'From Vibe to Spec — 台東 Workshop',
+  title: 'From Vibe to Spec — Taitung Workshop',
   theme: 'taitung',
   createdAt: '2026-05-22T15:31:57.855Z',
 };
 
+/* 雙語逐字稿：中文（你看懂、掌握節奏）——— 分隔線 ——— 英文（照念給學生）。
+   寫長一點、生活化，避免講太短。 */
 export const notes: (string | undefined)[] = [
   // H1
-  `下午好，我是 Michael。先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，重點是把作品「ship」出去（ship 就是「把東西做出來、放到網路上讓別人看到」）。\n三小時後你帶走的不是一個成品，是一套「用 AI 把東西做出來」的工作方式：第一小時裝好工具 + 講觀念、第二小時學怎麼用 Claude Code、第三小時親手 ship 一個網站。`,
-  `簡單講一下我自己：我是 Web Developer、寫網頁的；同時也是 Code for Taiwan 的成員。我的網站 michaello.me、GitHub Michael0520。`,
-  `先兩個小調查。第一個：過去 12 個月用 AI 寫過 code 的舉手。（停頓記比例）第二個：用 AI 把網站 ship 上線過的再舉手。（停頓記比例）OK，大概知道大家的位置了。`,
-  `先給你今天最重要的一條分界線 —— 用 AI 寫東西，其實有兩種 mode。這條線聽懂了，今天就值回票價。`,
-  `第一種叫 Vibe Coding —— 你跟 AI 聊聊聊、它給什麼你收什麼、能跑就好，是 AI 主導。第二種叫 AI Coding —— 你知道目標、主動選方案、敢拒絕、關鍵時介入，是人主導。`,
-  `一句話分：Vibe 是 AI 主導，AI Coding 是人主導。AI 是工具，你是決策者。（這句慢、停頓）`,
-  `這兩個不是對立，看情境用。玩具、週末小專案 → vibe OK；要長期維護、要上線給人用 → 切到 AI Coding。今天的目標是帶你從第一種走到第二種。`,
-  `好，動手前先把工具裝好。今天要裝四個東西：Warp（終端機）、Node + pnpm（跑網站的引擎）、Git（上傳用）、Claude Code（今天的主角）。跟著我一步步來，裝不起來就舉手、助教會過去。`,
-  `第一個，Warp。它是一個更好用的終端機 —— 終端機就是那個打指令的黑視窗，Warp 內建 AI、好看好操作。我們一起到 warp.dev，點 Download 裝起來。（帶大家到官網操作）裝好的舉手。`,
-  `第二個，Node 跟 pnpm —— 跑網站需要的引擎。到 nodejs.org 的下載頁，選 macOS、nvm、pnpm，它會給你這幾行指令。我們照著貼到 Warp 裡：先裝 nvm、再 nvm install 24、最後 corepack enable pnpm。（帶大家到官網複製指令）`,
-  `第三個，Claude Code，今天的主角。文件在 code.claude.com 的繁中頁。在 Warp 貼這行 curl 指令就裝好。Git 通常 macOS 已經內建，沒有的話系統會提示你裝。`,
-  `來檢查裝好了沒。在 Warp 一個一個打：node -v、pnpm -v、git --version、claude --version。每一個都應該跳出版本號 —— 看到版本就代表裝好了。四個都看到的舉手。（這裡多留時間，個別救援）`,
-  `工具到位了。第一段我們把觀念跟環境準備好 —— 接下來第二段，學怎麼真正驅動 Claude Code，還有一個讓 AI 變可靠的關鍵習慣，叫 SDD。`,
+  `下午好，我是 Michael，今天下午這三個小時都會跟大家一起。先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，這裡的精神就是「把作品 ship 出去」。ship 這個字今天會一直出現，意思就是「把東西真的做出來、放到網路上、讓別人連得到」。\n我先講白話一點：三小時後你帶走的，不會只是一個成品，而是一整套「用 AI 把東西做出來」的工作方式。我們分三段走 —— 第一小時把工具裝好、把觀念講清楚；第二小時學怎麼真正用 Claude Code；第三小時你親手做一個網站、推上線。放輕鬆，今天不需要你會寫程式。\n———\nGood afternoon, I'm Michael, and I'll be with you for these three hours. Thank you all for coming out to Zhiben, Taitung. TDF is Taiwan's most special digital-nomad festival, and the whole spirit here is to "ship" — that word will come up a lot today. It just means: actually build something, put it online, let people reach it.\nHere's the promise: in three hours, you won't just leave with a finished product — you'll leave with a whole way of building things with AI. We'll do it in three parts: hour one, install the tools and get the concepts; hour two, learn to actually drive Claude Code; hour three, you build a real website and ship it. Relax — you don't need to know how to code today.`,
+  `簡單介紹我自己：我是 Web Developer，平常就在寫網頁；同時也是 Code for Taiwan 的成員，做開源社群的東西。我的網站是 michaello.me，GitHub 是 Michael0520，等下這些連結 Resource Pack 裡也有，有問題隨時找我。\n———\nQuick intro: I'm a web developer — I build websites for a living — and I'm also a member of Code for Taiwan, working on open-source community stuff. My site is michaello.me, GitHub is Michael0520. These links are in the resource pack too, so reach out anytime.`,
+  `動手之前，先做兩個小調查，讓我抓一下大家的程度。第一個問題：過去 12 個月裡，有用 AI 寫過 code 的，請舉手。（停頓，掃一下，記個大概比例）好，放下。第二個：有真的用 AI 把一個網站 ship 上線過的，再舉一次手。（停頓，記比例）OK，大概知道大家的位置了 —— 沒舉手完全沒關係，今天就是從頭帶你做一次。\n———\nBefore we start, two quick questions so I can read the room. First: in the last 12 months, who has written code with AI? Raise your hand. (pause, scan, note roughly) Okay, hands down. Second: who has actually shipped a website live with AI? Raise again. (pause) Great — now I know where everyone is. If you didn't raise your hand, no problem at all — today we'll walk through it from scratch.`,
+  `我先給你今天最重要的一條分界線，這條線你聽懂了，今天就值回票價了 —— 用 AI 寫東西，其實有兩種模式（mode）。很多人沒意識到這件事，結果用得卡卡的。我們先把這兩種分清楚。\n———\nLet me give you the single most important line of today — get this and the day is already worth it: building with AI actually comes in two modes. Most people don't realize this, and that's why it feels frustrating. Let's separate the two clearly.`,
+  `第一種叫 Vibe Coding —— 你就是跟 AI 一直聊、它給你什麼你就收什麼、能跑起來就好。這種是「AI 主導」，你比較被動。第二種叫 AI Coding —— 你心裡有目標、會主動挑方案、看到不對會拒絕、關鍵時刻會跳進去改。這種是「你主導」。\n兩種沒有誰高誰低，但差別很大。\n———\nThe first is Vibe Coding — you just keep chatting with the AI, take whatever it gives you, and you're happy if it runs. Here the AI leads and you're passive. The second is AI Coding — you have a goal in mind, you actively pick approaches, you say no when something's off, and you step in at key moments. Here you lead.\nNeither is "better," but the difference is huge.`,
+  `一句話總結：Vibe 是 AI 主導，AI Coding 是人主導。（這句慢慢講，停一下）說到底，AI 只是工具，真正的決策者是你。今天我想做的，就是把你從第一種，帶到第二種。\n———\nIn one line: Vibe means the AI leads; AI Coding means you lead. (say this slowly, pause) At the end of the day, AI is just a tool — you are the decision-maker. What I want to do today is move you from the first mode to the second.`,
+  `要強調：這兩種不是對立的，是看情況用。你做個玩具、週末隨手試個點子 —— 用 vibe 完全沒問題，輕鬆又快。但只要這東西你要長期維護、要上線給別人用、是個正式的專案 —— 就該切到 AI Coding。高手是兩種都會、知道什麼時候用哪一種。今天的目標就是帶你學會切換。\n———\nTo be clear: these aren't rivals, you pick based on the situation. Building a toy, trying a quick weekend idea — vibe is totally fine, easy and fast. But the moment it's something you'll maintain long-term, ship to real users, a serious project — switch to AI Coding. The skilled move is knowing both and when to use which. Today's goal is to help you switch.`,
+  `好，觀念先放這。動手之前，我們得先把工具裝好。今天要裝四樣東西：Warp，一個終端機；Node 加 pnpm，跑網站的引擎；Git，上傳用的；還有 Claude Code，今天的主角。聽起來有點多，但我會一步一步帶，每一步裝不起來就舉手，助教會立刻過去幫你。我們不趕，等大家都裝好再往下。\n———\nOkay, concepts aside for now. Before we build, we need the tools installed. Four things today: Warp, a terminal; Node plus pnpm, the engine that runs the site; Git, for uploading; and Claude Code, today's star. Sounds like a lot, but I'll walk you through each one. If any step won't install, raise your hand and a helper comes right over. No rush — we move on once everyone's set.`,
+  `第一個，Warp。先解釋一下「終端機」是什麼 —— 就是那個可以打指令的黑色視窗，工程師每天都在用。Warp 是一個比較新、比較好用的終端機，介面好看、還內建 AI。我們一起到官網 warp.dev，點 Download，照著裝。（這裡帶大家到官網實際操作，不要只是念）裝好、打得開的，舉個手讓我看看。\n———\nFirst, Warp. Let me explain what a "terminal" is — it's that black window where you type commands; developers use it every day. Warp is a newer, nicer terminal — clean interface, AI built in. Let's go to warp.dev together, click Download, and install. (walk them to the actual site, don't just read it out) Once it's installed and opens, raise your hand so I can see.`,
+  `第二個，Node 和 pnpm —— 這是讓網站能在你電腦上跑起來的引擎。我們到 nodejs.org 的下載頁，選 macOS、nvm、pnpm 這幾個選項，官網會直接給你幾行指令。我們照著複製、貼到 Warp 裡：先裝 nvm，再 nvm install 24 裝 Node，最後 corepack enable pnpm。Git 大部分 Mac 已經內建，打 git --version 確認一下就好。（一樣帶大家到官網複製，不要自己手打）\n———\nSecond, Node and pnpm — the engine that lets a website run on your computer. Go to the nodejs.org download page, pick macOS, nvm, pnpm, and the site hands you a few lines. Copy them into Warp: install nvm first, then nvm install 24 for Node, then corepack enable pnpm. Git is usually already on your Mac — just run git --version to check. (again, take them to the official site to copy, don't type it by hand)`,
+  `第三個，Claude Code，今天的主角。它的官方文件在 code.claude.com，有繁體中文版。安裝超簡單，在 Warp 裡貼一行 curl 指令就好。裝完之後，在 Warp 打 claude 就能啟動它。等下我們整堂課都會用它。\n———\nThird, Claude Code, today's star. The official docs are at code.claude.com, with a traditional-Chinese version. Installing is dead simple — paste one curl line in Warp. Once it's done, just type claude in Warp to launch it. We'll use it for the rest of the workshop.`,
+  `來，一起檢查裝好了沒。在 Warp 裡一個一個打：node -v、pnpm -v、git --version、claude --version。每一個都應該跳出一個版本號碼 —— 只要看到版本號，就代表那個工具裝好了。四個都看到版本的，舉手讓我確認一下。（這頁多留一點時間，這是第一個關卡，沒過的個別去救援，確保大家都過了再往下）\n———\nLet's check everything together. In Warp, type these one by one: node -v, pnpm -v, git --version, claude --version. Each should print a version number — if you see a version, that tool is installed. Raise your hand if you see all four. (give this slide extra time — it's the first checkpoint; help anyone stuck individually and make sure everyone passes before moving on)`,
+  `工具到位了。第一段我們把環境跟觀念都準備好了 —— 接下來第二段，我們學怎麼真正「驅動」Claude Code，還有一個讓 AI 從「能用」變成「可靠」的關鍵習慣，叫 SDD。\n———\nTools are ready. In hour one we got the environment and the concepts set — next, in hour two, we learn to actually "drive" Claude Code, plus the one habit that turns AI from "usable" into "reliable": SDD.`,
   // H2
-  `歡迎回來。工具都會了，現在學怎麼「驅動」它 —— 怎麼讓 Claude Code 照你的意思做事。`,
-  `打開 Claude Code 超簡單：在 Warp 裡打一個字 claude，按 enter，它就開始了。然後你就用講話的方式跟它說你要什麼，不用記任何指令。`,
-  `這裡要特別講一個習慣，它是 vibe 跟 AI coding 的分水嶺 —— Plan Mode。在 Claude Code 裡連按兩次 Shift+Tab，它就不會直接動手，而是先給你一份計畫：要做什麼、改哪些檔、什麼順序。你看過、按核可，它才動。\n核心一句話：動手前先給計畫，不要邊做邊發明。（停頓）`,
-  `為什麼要這樣？因為只用嘴巴聊，通常會踩三個包：第一風格不一致、第二漏掉狀況、第三最危險的假性自信 —— AI 很開心說「做完了！」但做完什麼？`,
-  `我把今天最重要的一句話送給你：當 AI 說「做完了」，你要反問「做完什麼？」。答不出來，就是你從頭沒定義什麼叫做完。SDD 要解的就是這件事 —— 動手前先把「做完」的標準寫下來。`,
-  `怎麼寫清楚？三個階段，用人話寫就好：第一釐清要什麼（誰、為了什麼）、第二怎麼做（版型、區塊、限制）、第三拆成可驗的任務。整個循環就一句話：寫清楚 → AI 做 → 拿它來驗 → ship。`,
-  `來試一下手感。打開 Claude Code，跟它說：「幫我在桌面建一個資料夾叫 my-first，裡面放一個寫著我名字的文字檔。」看它先給計畫、你按核可、它動手 —— 這就是 AI Coding 的手感。（走動，看大家反應）`,
-  `會用了。第三段我們把這套用在一個真的網站上：clone 一個範本、用 Claude Code 改成你的、推上線。離開前每人有自己的網址。休息 10 分鐘，16:00 回來。`,
+  `歡迎回來。工具大家都裝好了，現在進到重點：怎麼「驅動」它 —— 也就是怎麼讓 Claude Code 真的照你的意思做事，而不是亂做一通。\n———\nWelcome back. Everyone's got the tools installed — now the key part: how to "drive" it. That is, how to get Claude Code to actually do what you mean, instead of going off on its own.`,
+  `打開 Claude Code 真的很簡單：在 Warp 裡打一個字 claude，按 enter，它就啟動了。然後你就用平常講話的方式，跟它說你要什麼就好 —— 不用背任何指令、不用記語法。這就是它對新手最友善的地方。\n———\nOpening Claude Code is genuinely easy: in Warp, type the word claude, press enter, and it starts. Then you just talk to it in plain language and tell it what you want — no commands to memorize, no syntax to learn. That's what makes it so beginner-friendly.`,
+  `這裡我要特別講一個習慣，它是 vibe coding 跟 AI coding 的分水嶺 —— Plan Mode。在 Claude Code 裡連按兩次 Shift+Tab，它就不會馬上動手，而是先給你一份計畫：它打算做什麼、要改哪些檔案、按什麼順序。你看過、覺得 OK、按核可，它才開始做。\n核心一句話：動手前先給計畫，不要邊做邊發明。（這句停一下，讓它沉下去）這就是你拿回主導權的關鍵 —— AI 想偏了，你在計畫階段就攔下來，不用等它做完一團才後悔。\n———\nLet me highlight one habit — it's the dividing line between vibe coding and AI coding: Plan Mode. In Claude Code, press Shift+Tab twice and it won't act right away — instead it gives you a plan: what it intends to do, which files it'll change, in what order. You review it, approve it, and only then does it run.\nThe core line: plan before acting, don't improvise as you go. (pause, let it land) This is how you take back control — if the AI drifts, you catch it at the plan stage, instead of regretting a big mess after it's done.`,
+  `為什麼要這麼麻煩？因為如果你只是用嘴巴一直聊，通常會踩三個坑。第一，風格不一致 —— 你今天講的跟明天講的不一樣，做出來就不一樣。第二，漏掉狀況 —— AI 只做了正常情況，沒網路、欄位空白這些它沒想到。第三，最危險的，假性自信 —— AI 會很開心地跟你說「做完了！」但你要問：做完什麼？\n———\nWhy bother? Because if you just keep chatting, you usually hit three traps. One, inconsistency — what you say today differs from tomorrow, so the output differs. Two, missed cases — the AI only handles the happy path; no offline, no empty fields. Three, the most dangerous, false confidence — the AI cheerfully says "Done!" — but you have to ask: done with what?`,
+  `我把今天最重要的一句話送給你：當 AI 說「做完了」，你要反問一句 —— 做完什麼？（停一下）如果你答不出來，那不是 AI 的問題，是你從一開始就沒定義「什麼叫做完」。SDD 要解的就是這件事 —— 在動手之前，先把「做完」的標準寫下來。\n———\nHere's the most important line of the day: when the AI says "Done," ask it back — done with what? (pause) If you can't answer, that's not the AI's fault — it's that you never defined "done" in the first place. That's exactly what SDD solves: before you start, write down what "done" means.`,
+  `怎麼把要什麼寫清楚？三個階段，而且用人話寫就好，不用很工程。第一，釐清你要什麼 —— 給誰看、為了什麼，這定方向。第二，怎麼做 —— 用什麼版型、放哪些區塊、有什麼限制，這定範圍。第三，拆成一條條可以勾選的任務 —— 每條都能說「做到了沒」。整個循環一句話：寫清楚 → AI 做 → 拿它來驗 → ship。\n———\nHow do you write down what you want? Three stages, and just use plain words — nothing technical. One, clarify what you want — for whom, and why; this sets the direction. Two, how to do it — what layout, which sections, what limits; this sets the scope. Three, break it into checkable tasks — each can be marked done or not. The whole loop in one line: write it clearly → AI builds → check it → ship.`,
+  `來試一下手感，讓你感覺一下。打開 Claude Code，跟它說：「幫我在桌面建一個資料夾叫 my-first，裡面放一個寫著我名字的文字檔。」然後看 —— 它會先給你計畫，你按核可，它才動手做。這個「計畫 → 核可 → 執行」的節奏，就是 AI Coding 的手感。（走動，看看大家的反應，鼓勵一下）\n———\nLet's get a feel for it. Open Claude Code and say: "Create a folder on my Desktop called my-first with a text file that has my name in it." Then watch — it gives a plan first, you approve, and only then it acts. That rhythm — plan, approve, execute — is the feel of AI Coding. (walk around, watch reactions, encourage them)`,
+  `你已經會用了。第三段，我們把這整套用在一個真的網站上：clone 一個現成的範本、用 Claude Code 改成你的、然後推上線。我保證，離開這個房間前，每個人都會有自己的網址。現在休息 10 分鐘，16:00 準時回來。\n———\nYou can use it now. In hour three, we apply all of this to a real website: clone a ready-made template, make it yours with Claude Code, then ship it. I promise — before you leave this room, everyone will have their own URL. Take a 10-minute break, back at 16:00 sharp.`,
   // H3
-  `歡迎回來。最後一小時全程動手 —— 我們抓一個現成的網站範本，用 Claude Code 改成你的，然後推上線。離開前每個人都會有自己的網址。`,
-  `動手前先看一份 spec —— 這是我提前寫好的個人站 spec。五個區塊：Goal（這站的目的）、Outcomes（訪客帶走什麼）、Non-goals（明說不做）、Constraints（限制）、Success criteria（怎麼算成功）。等下你會照它改。`,
-  `為什麼是這五塊？因為每一塊缺了 AI 都會自由發揮：缺 Goal 它做一般 portfolio、缺 Non-goals 它加一堆你沒要的、缺 Success criteria 你也不知道 OK 沒。這五塊就是給 AI 的契約。`,
-  `第一步，clone。在 Warp 打 git clone 加上範本網址，再 cd 進資料夾。clone 就是把網路上的範本整包複製到你電腦。卡住的舉手。（走動巡視）`,
-  `第二步，pnpm install 裝套件、pnpm dev 跑起來。看到 Ready，打開瀏覽器看 localhost:3000，應該看到範本網站。看到的舉手。（多留時間，這是第一個動手關卡）`,
-  `現在用 Claude Code 改成你的。確認你在 portfolio-workshop 資料夾裡打開 claude，然後照念：「幫我把這個網站的名字改成你的名字、城市改成你住的、自我介紹改成一句話。」它會先給計畫、你核可、它改。重新整理看到自己資料的舉手。（走動，個別救援）`,
-  `資料是你的了，把它放上 GitHub。到 github.com/new，命名隨意，選 Public、不要勾任何初始化，Create。`,
-  `Create 完 GitHub 會給你兩行指令，複製貼到 Warp 跑。不會打也可以直接請 Claude Code 幫你推。卡住的舉手。`,
-  `最後上線。到 vercel.com，New Project、Import 你剛剛的 repo、Deploy。大概 30 秒它給你一個網址。成功的舉手。`,
-  `現在你有自己的網址了！兩個動作：貼到共享白板讓大家互看、截圖分享。這就是 ship 的感覺。（能量拉高，這是高潮）`,
-  `網站是你的了，但還是範本的樣子。花兩分鐘跟 Claude Code 說一句話：「把主色改成深藍、背景換成米白。」重新整理就看到變化 —— 你完全不用懂程式。`,
-  `想讓它更專業？與其自己慢慢調，不如裝一個設計 skill。Claude Code 也能裝 skill，指令是 npx skills add。去 skills.sh 逛逛（Vercel 做的開放目錄），排行榜第一是 find-skills 一百五十萬安裝。`,
-  `我帶你裝一個我很愛的設計 skill —— Impeccable，它教你的 AI 設計品味。在 Warp 打 npx skills add pbakaus/impeccable。裝完多了 23 個設計指令、7 個參考領域、27 條反模式規則。`,
-  `裝好就用。跟 Claude Code 說「用 /polish 幫我的個人站打磨設計」。為什麼需要它？因為 AI 看過太多範本，沒特別講就生出 Inter 字體、紫藍漸層、卡片疊卡片那種「一看就是 AI 做的」設計。Impeccable 把好設計變成 AI 跟你共用的詞彙。`,
-  `三小時到這。回顧：第一小時你裝好工具、懂了 Vibe vs AI Coding；第二小時會用 Claude Code、學會用 SDD 把要什麼講清楚；第三小時從範本到 live URL，ship 了自己的網站。回家就用這套工作方式，把你下一個想法也 ship 出來。`,
-  `請花兩分鐘寫手上那張卡：第一題今天最有用的一件事、第二題回家第一個會做什麼、第三題 1 到 10 推薦。寫完別走，我邊收邊問 2-3 位分享第二題。`,
-  `謝謝大家今天的耐心。兩件事帶走：你 ship 的網址，還有一套用 AI 做東西的工作方式。有問題找我，我留到 17:30，michaello.me 跟 GitHub 都歡迎。最後 —— 合照！請大家集中到投影前。`,
+  `歡迎回來，最後一小時了，這一小時幾乎全程動手。我們會抓一個現成的網站範本，用 Claude Code 把它改成你的，然後推上線。再強調一次：離開前，每個人都會有自己的網址，這是今天的承諾。\n———\nWelcome back — last hour, and it's almost all hands-on. We'll grab a ready-made website template, make it yours with Claude Code, then ship it. Once more: before you leave, everyone will have their own URL. That's the promise.`,
+  `動手之前，先花一分鐘看一份 spec —— 這是我提前幫你寫好的個人站 spec。它有五個區塊：Goal 是這個網站的目的、Outcomes 是訪客看完帶走什麼、Non-goals 是明說不做的事、Constraints 是限制、Success criteria 是怎麼算成功。等一下你就會照著這份去改。看起來不嚇人吧？就是用人話講清楚要什麼。\n———\nBefore we build, take a minute to read a spec — this is one I wrote ahead of time for the personal site. It has five blocks: Goal is the site's purpose, Outcomes is what a visitor takes away, Non-goals is what you explicitly won't do, Constraints are the limits, and Success criteria is how you know it worked. You'll edit based on this in a moment. Not scary, right? It's just plainly stating what you want.`,
+  `為什麼一定要這五塊？因為少了任何一塊，AI 就會自由發揮。沒有 Goal，它就做一個很普通的 portfolio；沒有 Non-goals，它會加一堆你根本沒要的功能；沒有 Success criteria，你自己也不知道到底做好了沒。所以這五塊，其實就是你給 AI 的一份「契約」。\n———\nWhy these five blocks? Because miss any one and the AI improvises. No Goal, it builds a generic portfolio; no Non-goals, it adds features you never asked for; no Success criteria, you don't even know if it's done. So these five blocks are really a "contract" you give the AI.`,
+  `第一步，clone。在 Warp 裡打 git clone 加上範本的網址，再 cd 進那個資料夾。clone 的意思就是把網路上的範本，整包複製到你自己的電腦。網址我會貼在大白板上，照著打就好。卡住的舉手。（走動巡視，看看大家有沒有打錯字）\n———\nStep one, clone. In Warp, type git clone plus the template's URL, then cd into that folder. Clone just means copying the whole template from the web onto your own computer. I'll put the URL on the big board — just type it as shown. Raise your hand if stuck. (walk around, check for typos)`,
+  `第二步，跑起來。打 pnpm install 把需要的套件裝好，再打 pnpm dev 把它跑起來。看到 Ready，就打開瀏覽器、輸入 localhost:3000，你應該會看到一個現成的範本網站。看到的舉手。（這頁多留時間，這是第一個動手關卡，沒看到的我個別過去看）\n———\nStep two, run it. Type pnpm install to install the packages, then pnpm dev to start it. When you see Ready, open your browser at localhost:3000 — you should see a ready-made template site. Raise your hand when you see it. (give this extra time — first hands-on checkpoint; I'll come help anyone who doesn't see it)`,
+  `現在最有趣的部分：用 Claude Code 把它改成你的。先確認你是在 portfolio-workshop 這個資料夾裡打開 claude，然後照著念：「幫我把這個網站的名字改成你的名字、城市改成你住的城市、自我介紹改成一句話。」它會先給計畫、你核可、它就改好了。改完重新整理網頁、看到自己資料的，舉手。（走動，這關有人會卡，個別救援）\n———\nNow the fun part: make it yours with Claude Code. First make sure you opened claude inside the portfolio-workshop folder, then say: "Change this site's name to your name, the city to where you live, and the intro to one line about you." It plans, you approve, it edits. Refresh the page and raise your hand when you see your own info. (walk around — some will get stuck here, help individually)`,
+  `資料是你的了，現在把它放上 GitHub。到 github.com/new，名字隨便取，記得選 Public、然後不要勾任何初始化選項，按 Create。這幾個設定很重要，尤其「不要勾初始化」，不然等下推的時候會衝突。\n———\nYour info is in. Now put it on GitHub. Go to github.com/new, name it anything, choose Public, and don't check any init options, then hit Create. These settings matter — especially "don't check init," otherwise the push will conflict later.`,
+  `Create 完，GitHub 會直接給你兩行指令，你把它複製、貼到 Warp 裡跑就好。如果你不想自己打，也可以直接請 Claude Code 幫你推上去 —— 跟它說「幫我把這個專案推到 GitHub」就行。卡住的舉手。\n———\nAfter Create, GitHub hands you two lines — copy them and run them in Warp. If you'd rather not type, just ask Claude Code to push for you — say "push this project to GitHub." Raise your hand if stuck.`,
+  `最後一步，上線。到 vercel.com，點 New Project，Import 你剛剛建的那個 repo，全部用預設、按 Deploy。大概 30 秒，它就會給你一個網址。Deploy 成功、拿到網址的，舉手讓我看看。\n———\nLast step, go live. Go to vercel.com, click New Project, Import the repo you just made, keep all defaults, hit Deploy. In about 30 seconds it gives you a URL. Raise your hand when your deploy succeeds and you have a URL.`,
+  `現在，你有自己的網址了！這是今天的高潮。兩件事：第一，把網址貼到共享白板上，大家互相看看彼此做的；第二，截個圖、分享出去，這是你今天的紀念。這個感覺 —— 就是 ship。（這裡能量拉高，幫大家鼓掌一下）\n———\nNow — you have your own URL! This is the high point of the day. Two things: one, post your URL on the shared board so everyone can see each other's work; two, take a screenshot and share it — that's your souvenir for today. This feeling — this is shipping. (raise the energy here, get a round of applause)`,
+  `網站雖然上線了，但它還是「範本的樣子」，不夠像你。想讓它更專業，與其自己慢慢調 CSS，不如裝一個專門做設計的 skill。Claude Code 也能裝 skill，指令就是 npx skills add。skills.sh 是 Vercel 做的開放目錄，你可以去逛逛，排行榜第一名 find-skills 有一百五十萬次安裝，很多好東西。\n———\nYour site is live, but it still looks like the template — not quite you yet. To make it more polished, instead of tweaking CSS by hand, install a design skill. Claude Code can add skills too — the command is npx skills add. skills.sh is an open directory by Vercel; go browse it. The top one, find-skills, has 1.5 million installs — lots of good stuff there.`,
+  `我帶你裝一個我自己很愛、而且免費的設計 skill —— Impeccable，它的作用就是「教你的 AI 設計品味」。在 Warp 裡打 npx skills add pbakaus/impeccable。裝完之後，你就多了 23 個設計指令、7 個參考領域、還有 27 條反模式偵測規則。它是從 Anthropic 官方的 frontend-design skill 演化來的。\n———\nLet me have you install a design skill I love, and it's free — Impeccable. Its whole job is to "teach your AI design taste." In Warp, type npx skills add pbakaus/impeccable. Once installed, you gain 23 design commands, 7 reference domains, and 27 anti-pattern rules. It evolved from Anthropic's official frontend-design skill.`,
+  `裝好就用用看。跟 Claude Code 說「用 /polish 幫我的個人站打磨設計」。為什麼需要它？因為 AI 看過太多類似的範本，如果你沒特別講，它就會生出那種「一看就知道是 AI 做的」設計 —— Inter 字體、紫藍漸層、卡片疊卡片。Impeccable 做的事，就是把「好設計」變成 AI 跟你之間共用的詞彙，讓它知道你要的是什麼。\n———\nNow use it. Tell Claude Code "use /polish to refine my personal site's design." Why do you need it? Because the AI has seen too many similar templates — if you don't say otherwise, it produces that unmistakable "made by AI" look: Inter font, purple-blue gradients, cards stacked on cards. What Impeccable does is turn "good design" into shared vocabulary between you and the AI, so it knows what you actually want.`,
+  `三小時走到這了，我們回顧一下你今天帶走了什麼。第一小時，你把工具都裝好了，也懂了 Vibe 跟 AI Coding 的差別。第二小時，你會用 Claude Code 了，也學會用 SDD 把「要什麼」講清楚。第三小時，你從一個範本，一路做到一個 live URL，真的 ship 了自己的網站。回家之後，就用今天這套工作方式，把你下一個想法也 ship 出來。\n———\nThree hours in — let's recap what you're taking home. Hour one, you installed all the tools and got the difference between Vibe and AI Coding. Hour two, you can drive Claude Code and learned to spell out what you want with SDD. Hour three, you went from a template all the way to a live URL — you actually shipped your own site. Back home, use this same workflow to ship your next idea too.`,
+  `謝謝大家今天的耐心，三個小時對講者跟學員都不短。兩件事帶走：一個是你今天親手 ship 的網址，另一個是一整套用 AI 把東西做出來的工作方式。有任何問題、卡關、想多聊的，都來找我，我會留到 17:30，michaello.me 跟 GitHub 都歡迎。\n———\nThank you all for your patience — three hours is long for everyone. Two things to take home: the URL you shipped today, and a whole way of building things with AI. Any questions, anything you're stuck on, anything you want to chat about — come find me, I'll be here until 17:30, michaello.me and GitHub both welcome.`,
 ];
 
 export default [
   Cover, Intro, HandsUp, Divider, VibeVsAI, OneLine, Switch,
   SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
   H2Open, OpenClaude, PlanMode, Pains, DoneWhat, SddStages, TryClaude, H2Close,
-  H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, ChangeColor, SkillsSh, Impeccable, Polish, Recap, Feedback, ThankYou,
+  H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, SkillsSh, Impeccable, Polish, Recap, ThankYou,
 ] satisfies Page[];
