@@ -3,6 +3,8 @@ import claudeLogo from '@assets/logos/claude.svg';
 import vercelLogo from '@assets/logos/vercel.svg';
 import githubLogo from '@assets/logos/github.svg';
 import posthogLogo from '@assets/logos/posthog-full.png';
+import code4twLogo from '@assets/logos/code4tw.png';
+import michaelAvatar from '@assets/avatars/michael.jpg';
 import mcpArchitecture from './assets/mcp-architecture.webp';
 
 export const design: DesignSystem = {
@@ -153,7 +155,7 @@ const WindowShell = ({
 );
 
 /* ── Icons (inlined lucide SVG paths — lucide.dev, ISC; no package import) ── */
-type IconName = 'hand' | 'check' | 'arrow-right';
+type IconName = 'hand' | 'check' | 'arrow-right' | 'globe';
 const ICON_PATHS: Record<IconName, React.ReactNode> = {
   // lucide "hand"
   hand: (
@@ -166,6 +168,14 @@ const ICON_PATHS: Record<IconName, React.ReactNode> = {
   ),
   // lucide "check"
   check: <path d="M20 6 9 17l-5-5" />,
+  // lucide "globe"
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+      <path d="M2 12h20" />
+    </>
+  ),
   // lucide "arrow-right"
   'arrow-right': (
     <>
@@ -276,30 +286,44 @@ const S1: Page = () => (
 );
 
 /* S2 — 自我介紹 */
-const S2: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
-    <style>{styles}</style>
-    <PageHead eyebrow="自我介紹">嗨，我是 Michael</PageHead>
-    <ul style={{ fontSize: 40, lineHeight: 1.7, marginTop: 56, paddingLeft: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
-      <li>在 <span style={{ color: accentB1 }}>Moxa</span> 寫 Angular / React</li>
-      <li><span style={{ color: accentB1 }}>Code for Taiwan</span> 社群組織者</li>
-      <li>今天負責下午這 3 小時</li>
-    </ul>
-    <Footer />
-  </div>
+const IntroRow = ({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) => (
+  <li style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+    <span style={{ width: 48, display: 'inline-flex', justifyContent: 'center', flexShrink: 0 }}>{icon}</span>
+    <span>{children}</span>
+  </li>
 );
 
-/* S3 — 場域 + 承諾 */
-const S3: Page = () => (
-  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
+const S2: Page = () => (
+  <div style={{ ...fill, display: 'flex', alignItems: 'center', gap: 100, padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="場域 + 承諾">把作品 ship 出去</PageHead>
-    <p style={{ fontSize: 38, lineHeight: 1.6, color: muted, maxWidth: 1500, marginTop: 48, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <span style={{ color: accentB1, fontWeight: 700 }}>ship</span> = 把東西做出來、放到網路上讓別人看得到。
-    </p>
-    <p style={{ fontSize: 40, lineHeight: 1.6, maxWidth: 1500, marginTop: 32, animation: 'fadeUp 0.5s ease 0.18s both' }}>
-      3 小時後你帶走的不是一個成品，是一套<span style={{ color: accentB1 }}>「用 AI 把東西做出來」的工作方式</span>。
-    </p>
+    <div style={{ flex: 1 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 18, animation: 'fadeUp 0.5s ease both' }}>
+        <Title size={104}>Michael Lo</Title>
+        <span style={{ fontSize: 40, fontStyle: 'italic', color: accentB1, fontFamily: 'cursive' }}>ming</span>
+      </div>
+      <ul style={{ fontSize: 38, lineHeight: 1.9, marginTop: 40, padding: 0, listStyle: 'none', animation: 'fadeUp 0.5s ease 0.12s both' }}>
+        <IntroRow icon={<span style={{ fontFamily: mono, color: accentB1, fontSize: 30 }}>{'</>'}</span>}>Web Developer</IntroRow>
+        <IntroRow icon={<img src={code4twLogo} alt="Code for Taiwan" style={{ width: 44, height: 44, objectFit: 'contain' }} />}>
+          Code for Taiwan Member
+        </IntroRow>
+      </ul>
+      <p style={{ fontSize: 32, fontStyle: 'italic', color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.18s both' }}>
+        “Coding is my way of making tomorrow a little lazier.”
+      </p>
+      <div style={{ display: 'flex', gap: 48, marginTop: 44, fontSize: 30, color: muted, animation: 'fadeUp 0.5s ease 0.24s both' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <Icon name="globe" size={28} color={muted} /> michaello.me
+        </span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <img src={githubLogo} alt="GitHub" style={{ width: 28, height: 28, objectFit: 'contain' }} /> Michael0520
+        </span>
+      </div>
+    </div>
+    <img
+      src={michaelAvatar}
+      alt="Michael Lo"
+      style={{ width: 380, height: 380, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, animation: 'fadeUp 0.5s ease 0.1s both' }}
+    />
     <Footer />
   </div>
 );
@@ -1639,12 +1663,10 @@ export const meta: SlideMeta = {
    ════════════════════════════════════════════════════════ */
 export const notes: (string | undefined)[] = [
   // 1 · S1 封面
-  `下午好，我是 Michael，Code for Taiwan 社群組織者，平常在 Moxa 寫 Angular 跟 React。今天負責下午這 3 小時。\n（站定中央、眼神掃過全場，建立場域，先別急著翻頁）`,
+  `下午好，我是 Michael。先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，重點是把作品「ship」出去（ship 這個字今天會一直出現，就是「把東西做出來、放到網路上讓別人看到」）。\n3 小時後你帶走的不是一個成品，是一套「用 AI 把東西做出來」的工作方式：第一小時講觀念、第二小時親手 ship 一個網站、第三小時學怎麼驗證 + 帶資源回家。\n（站定中央、眼神掃過全場，建立場域，先別急著翻頁）`,
   // 2 · S2 自我介紹
-  `簡單講一下我自己：白天在 Moxa 寫前端，Angular 跟 React 都寫；下班後在 Code for Taiwan 做開源社群。今天這 3 小時，我會把我自己每天在用的 AI 工作方式，整套帶給你。`,
-  // 3 · S3 場域 + 承諾
-  `先謝謝大家來到台東知本。TDF 是台灣最特別的數位遊牧節 —— 不是來度假、不是來開會，是來把作品「ship」出去。ship 這個字今天會一直出現，意思就是「把東西做出來、放到網路上讓別人看得到」。\n3 小時後，你帶走的不是一個成品，是一套「用 AI 把東西做出來」的工作方式。第一小時把觀念講清楚，第二小時你親手 ship 一個網站，第三小時學怎麼驗證它、然後帶資源回家。`,
-  // 4 · S4 兩個舉手
+  `簡單講一下我自己：我是 Web Developer、寫網頁的；同時也是 Code for Taiwan 的成員，做開源社群。我的網站是 michaello.me、GitHub 是 Michael0520。`,
+  // 3 · S4 兩個舉手
   `先兩個小調查。第一個：過去 12 個月，用 AI 寫過 code 的，舉手。（停頓，記比例）\n第二個：有用 AI 把網站 ship 上線過的，再舉手。（停頓，記比例）\nOK，大概知道大家的位置了 —— 後面我會照這個比例調整深淺。`,
   // 5 · S5 今天最重要的分界線
   `先給你今天最重要的一條分界線 —— 用 AI 寫 code，其實有兩種 mode。這條線你聽懂了，今天就值回票價了。`,
@@ -1759,7 +1781,7 @@ export const notes: (string | undefined)[] = [
 ];
 
 export default [
-  S1, S2, S3, S4, S5, S6, S8, S9, S10,
+  S1, S2, S4, S5, S6, S8, S9, S10,
   S11, S12, S13, S14, S15, S16, S16b, S17, S18, S19, S20, S21, S22,
   S23, S24, S25, S27, S29, S30, S31, S32,
   S33, S34, S35, S36, S37, S38, S39, S17b, S17c, S17d, S40,
