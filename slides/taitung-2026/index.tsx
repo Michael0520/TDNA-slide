@@ -3,6 +3,7 @@ import vercelLogo from '@assets/logos/vercel.svg';
 import githubLogo from '@assets/logos/github.svg';
 import code4twLogo from '@assets/logos/code4tw.png';
 import michaelAvatar from '@assets/avatars/michael.jpg';
+import slidesQr from './assets/slides-qr.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#0E0E10', text: '#F5F4F2', accent: '#D97757' },
@@ -428,6 +429,27 @@ const Switch: Page = () => (
     <p style={{ fontSize: 36, color: muted, marginTop: 48, animation: 'fadeUp 0.5s ease 0.2s both' }}>
       Today's goal: take you <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>from the first mode to the second</span>.
     </p>
+    <Footer accent={accentH1} />
+  </div>
+);
+
+/* H1-07b 掃 QR：拿到簡報連結（之後複製指令用） */
+const ScanQr: Page = () => (
+  <div style={{ ...fill, display: 'flex', alignItems: 'center', gap: 100, padding: 120 }}>
+    <style>{styles}</style>
+    <div style={{ width: 360, height: 360, borderRadius: 28, background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28, boxSizing: 'border-box', flexShrink: 0, animation: 'fadeUp 0.5s ease both' }}>
+      <img src={slidesQr} alt="Slides QR code" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+    <div style={{ flex: 1 }}>
+      <div style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}>
+        <Eyebrow color={accentH1}>SCAN THIS FIRST</Eyebrow>
+        <Title size={96}>Open these slides<br />on your phone</Title>
+      </div>
+      <p style={{ fontSize: 36, color: muted, marginTop: 36, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
+        Today you'll <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>copy a few commands</span> from these slides —
+        scan the QR and keep them open so you can copy as we go.
+      </p>
+    </div>
     <Footer accent={accentH1} />
   </div>
 );
@@ -1097,6 +1119,8 @@ export const notes: (string | undefined)[] = [
   `第一種叫 Vibe Coding —— 你就是跟 AI 一直聊、它給你什麼你就收什麼、能跑起來就好。這種是「AI 主導」，你比較被動。第二種叫 AI Coding —— 你心裡有目標、會主動挑方案、看到不對會拒絕、關鍵時刻會跳進去改。這種是「你主導」。\n兩種沒有誰高誰低，但差別很大。\n———\nThe first is Vibe Coding — you just keep chatting with the AI, take whatever it gives you, and you're happy if it runs. Here the AI leads and you're passive. The second is AI Coding — you have a goal in mind, you actively pick approaches, you say no when something's off, and you step in at key moments. Here you lead.\nNeither is "better," but the difference is huge.`,
   `一句話總結：Vibe 是 AI 主導，AI Coding 是人主導。（這句慢慢講，停一下）說到底，AI 只是工具，真正的決策者是你。今天我想做的，就是把你從第一種，帶到第二種。\n———\nIn one line: Vibe means the AI leads; AI Coding means you lead. (say this slowly, pause) At the end of the day, AI is just a tool — you are the decision-maker. What I want to do today is move you from the first mode to the second.`,
   `要強調：這兩種不是對立的，是看情況用。你做個玩具、週末隨手試個點子 —— 用 vibe 完全沒問題，輕鬆又快。但只要這東西你要長期維護、要上線給別人用、是個正式的專案 —— 就該切到 AI Coding。高手是兩種都會、知道什麼時候用哪一種。今天的目標就是帶你學會切換。\n———\nTo be clear: these aren't rivals, you pick based on the situation. Building a toy, trying a quick weekend idea — vibe is totally fine, easy and fast. But the moment it's something you'll maintain long-term, ship to real users, a serious project — switch to AI Coding. The skilled move is knowing both and when to use which. Today's goal is to help you switch.`,
+  // ScanQr
+  `在開始裝東西之前，先請大家拿出手機，掃一下螢幕上這個 QR code —— 它會打開今天這份簡報。為什麼要掃？因為等一下安裝、還有後面動手的時候，會有幾行指令需要你複製，從手機上的簡報複製會比你自己一個字一個字打快很多、也不容易打錯。掃好、打開簡報的，舉個手讓我看看。\n———\nBefore we install anything, please take out your phone and scan the QR code on screen — it opens these slides. Why? Because during setup and the hands-on parts later, there are a few commands you'll need to copy, and copying from the slides on your phone is much faster and less error-prone than typing them out. Raise your hand once you've scanned it and the slides are open.`,
   `好，觀念先放這。動手之前，我們得先把工具裝好。今天要裝四樣東西：Warp，一個終端機；Node 加 pnpm，跑網站的引擎；Git，上傳用的；還有 Claude Code，今天的主角。聽起來有點多，但我會一步一步帶，每一步裝不起來就舉手，助教會立刻過去幫你。我們不趕，等大家都裝好再往下。\n———\nOkay, concepts aside for now. Before we build, we need the tools installed. Four things today: Warp, a terminal; Node plus pnpm, the engine that runs the site; Git, for uploading; and Claude Code, today's star. Sounds like a lot, but I'll walk you through each one. If any step won't install, raise your hand and a helper comes right over. No rush — we move on once everyone's set.`,
   `第一個，Warp。先解釋一下「終端機」是什麼 —— 就是那個可以打指令的黑色視窗，工程師每天都在用。Warp 是一個比較新、比較好用的終端機，介面好看、還內建 AI。我們一起到官網 warp.dev，點 Download，照著裝。（這裡帶大家到官網實際操作，不要只是念）裝好、打得開的，舉個手讓我看看。\n———\nFirst, Warp. Let me explain what a "terminal" is — it's that black window where you type commands; developers use it every day. Warp is a newer, nicer terminal — clean interface, AI built in. Let's go to warp.dev together, click Download, and install. (walk them to the actual site, don't just read it out) Once it's installed and opens, raise your hand so I can see.`,
   `第二個，Node 和 pnpm —— 這是讓網站能在你電腦上跑起來的引擎。我們到 nodejs.org 的下載頁，選 macOS、nvm、pnpm 這幾個選項，官網會直接給你幾行指令。我們照著複製、貼到 Warp 裡：先裝 nvm，再 nvm install 24 裝 Node，最後 corepack enable pnpm。Git 大部分 Mac 已經內建，打 git --version 確認一下就好。（一樣帶大家到官網複製，不要自己手打）\n———\nSecond, Node and pnpm — the engine that lets a website run on your computer. Go to the nodejs.org download page, pick macOS, nvm, pnpm, and the site hands you a few lines. Copy them into Warp: install nvm first, then nvm install 24 for Node, then corepack enable pnpm. Git is usually already on your Mac — just run git --version to check. (again, take them to the official site to copy, don't type it by hand)`,
@@ -1132,7 +1156,7 @@ export const notes: (string | undefined)[] = [
 
 export default [
   Cover, Intro, AboutCode4tw, HandsUp, Divider, VibeVsAI, OneLine, Switch,
-  SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
+  ScanQr, SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
   H2Open, OpenClaude, PlanMode, Pains, DoneWhat, SddStages, TryClaude, H2Close,
   H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, SkillsSh, Impeccable, Polish, Recap, ThankYou,
 ] satisfies Page[];
