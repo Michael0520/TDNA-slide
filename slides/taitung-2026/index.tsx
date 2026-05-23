@@ -619,7 +619,7 @@ const H2Open: Page = () => (
       <Eyebrow color={accentH2}>HOUR 2 · AI CODING · 15:00</Eyebrow>
     </div>
     <Title size={104}>
-      Tools ready —<br />now learn to <span style={{ color: accentH2 }}>drive them</span>.
+      Make Claude Code<br /><span style={{ color: accentH2 }}>do what you mean</span>.
     </Title>
     <Footer accent={accentH2} />
   </div>
@@ -1145,10 +1145,10 @@ export const notes: (string | undefined)[] = [
   // H1
   `【中文】\n下午好，我是 Michael，今天下午這三個小時都會跟大家一起。\n先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，這裡的精神就是「把作品 ship 出去」。\nship 這個字今天會一直出現，意思就是「把東西真的做出來、放到網路上、讓別人連得到」。\n三小時後你帶走的，不會只是一個成品，而是一整套「用 AI 把東西做出來」的工作方式。\n我們分三段走：第一小時把工具裝好、把觀念講清楚；第二小時學怎麼用 Claude Code；第三小時你親手做一個網站、推上線。\n放輕鬆，今天完全不需要你會寫程式。\n\n———\n\n【English】\nGood afternoon, I'm Michael. I'll be with you for these three hours.\nThank you all for coming to Taitung. The idea of TDF is simple: make something and "ship" it.\n"Ship" means: build a thing, put it online, and let people see it. You'll hear this word a lot today.\nIn three hours, you won't just get a finished site. You'll get a way to build things with AI.\nWe do it in three parts: hour one, install the tools. Hour two, learn Claude Code. Hour three, you build a real website and ship it.\nRelax — you don't need to know how to code today.`,
   `【中文】\n簡單介紹我自己：我是 Web Developer，平常就在寫網頁；同時也是 Code for Taiwan 的成員，做開源社群的東西。\n我的網站是 michaello.me，GitHub 是 Michael0520。\n先說一下，我的英文沒有很流利，等下講解時如果哪裡卡卡的、或用詞怪怪的，請大家多多包容，也歡迎隨時打斷我、問我。\n\n———\n\n【English】\nQuick intro. I'm a web developer — I build websites. I'm also a member of Code for Taiwan.\nMy site is michaello.me, and my GitHub is Michael0520.\nOne thing: my English is not very good. If I stop or use a strange word, please be kind.\nAnd feel free to stop me and ask anytime.`,
-  // OpenSlides
-  `【中文】\n開始之前，請大家現在就做一件事：打開今天這份簡報。\n連結就在這場活動的 Luma 頁面上，用你的手機或筆電點開，整場都開著別關。\n為什麼？因為等一下安裝、還有後面動手的時候，會有幾行指令要複製。你直接從自己螢幕上的簡報複製、貼上就好，比一個字一個字打快很多、也不會打錯。\n打開簡報的，舉個手讓我看看。\n\n———\n\n【English】\nBefore we start, please do one thing right now: open today's slides.\nThe link is on this event's Luma page — open it on your phone or laptop, and keep it open the whole time.\nWhy? Because later, during install and the hands-on parts, there are a few commands to copy. You can copy them straight from the slides on your own screen — much faster than typing, and no typos.\nRaise your hand once you have the slides open.`,
   // AboutCode4tw
   `【中文】\n這裡花一分鐘介紹一下我的團隊 —— Code for Taiwan。\n它是一個公民科技社群，免費、開放，每個月有一次線上聚會，大家一起分享、一起學。\n不管你是工程師、設計師、PM、還是只是有興趣，背景完全不限，都歡迎來。\n我們的核心理念是「重觀念、不只重工具」—— 比起教你用某個工具，更想讓你懂背後的「為什麼」。\n今天這場 workshop 其實也是這個精神：你不用會寫程式，但你會帶走一套思考方式。\n官網是 codefortaiwan.org，有興趣回家可以看看。\n\n———\n\n【English】\nLet me take a minute to talk about my team — Code for Taiwan.\nIt's a tech community. It's free and open, with one online meetup every month where we share and learn.\nDeveloper, designer, PM, or just interested — everyone is welcome.\nOur main idea is "concepts over tools." We want you to understand why, not just how.\nToday's workshop has the same spirit: you don't need to code, but you'll take home a way of thinking.\nThe site is codefortaiwan.org — take a look when you get home.`,
+  // OpenSlides
+  `【中文】\n認識完我跟團隊，開始之前先請大家做一件事：打開今天這份簡報。\n連結就在這場活動的 Luma 頁面上，用你的手機或筆電點開，整場都開著別關。\n為什麼？因為等一下安裝、還有後面動手的時候，會有幾行指令要複製。你直接從自己螢幕上的簡報複製、貼上就好，比一個字一個字打快很多、也不會打錯。\n打開簡報的，舉個手讓我看看。\n\n———\n\n【English】\nNow that you know me and my team, one thing before we start: open today's slides.\nThe link is on this event's Luma page — open it on your phone or laptop, and keep it open the whole time.\nWhy? Because later, during install and the hands-on parts, there are a few commands to copy. You can copy them straight from the slides on your own screen — much faster than typing, and no typos.\nRaise your hand once you have the slides open.`,
   // Agenda
   `【中文】\n快速看一下今天三個小時怎麼走。\n第一小時，我們把工具裝好，再講清楚 Vibe 跟 AI Coding 的差別。\n第二小時，學怎麼用 Claude Code，還有一個讓 AI 變可靠的習慣，叫 SDD。\n第三小時最好玩 —— 你親手做一個網站、推上線。\n所以離開前，每個人都會有一個自己的網址。\n\n———\n\n【English】\nQuick look at how the three hours go.\nHour one, we install the tools and get the difference between Vibe and AI Coding.\nHour two, we learn Claude Code, plus one habit that makes AI reliable, called SDD.\nHour three is the fun part — you build a website and ship it.\nSo before you leave, everyone will have their own URL.`,
   `【中文】\n動手之前，先做兩個小調查，讓我抓一下大家的程度。\n第一個問題：過去 12 個月裡，有用 AI 寫過 code 的，請舉手。\n（停頓，掃一下，記個大概比例）好，放下。\n第二個：有真的用 AI 把一個網站 ship 上線過的，再舉一次手。\n（停頓，記比例）OK，大概知道大家的位置了 —— 沒舉手完全沒關係，今天就是從頭帶你做一次。\n\n———\n\n【English】\nBefore we start, two quick questions.\nFirst: in the last 12 months, who has written code with AI? Please raise your hand. (pause, look around) Okay, hands down.\nSecond: who has put a website online with AI? Raise your hand again. (pause)\nGreat — now I know where everyone is. If you didn't raise your hand, that's fine. We start from zero today.`,
@@ -1190,7 +1190,7 @@ export const notes: (string | undefined)[] = [
 ];
 
 export default [
-  Cover, Intro, OpenSlides, AboutCode4tw, Agenda, HandsUp, Divider, VibeVsAI, OneLine, Switch,
+  Cover, Intro, AboutCode4tw, OpenSlides, Agenda, HandsUp, Divider, VibeVsAI, OneLine, Switch,
   SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
   H2Open, OpenClaude, PlanMode, Pains, DoneWhat, SddStages, TryClaude, H2Close,
   H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, SkillsSh, Impeccable, Polish, Recap, ThankYou,
