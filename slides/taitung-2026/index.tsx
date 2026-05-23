@@ -3,7 +3,6 @@ import vercelLogo from '@assets/logos/vercel.svg';
 import githubLogo from '@assets/logos/github.svg';
 import code4twLogo from '@assets/logos/code4tw.png';
 import michaelAvatar from '@assets/avatars/michael.jpg';
-import slidesQr from './assets/slides-qr.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#0E0E10', text: '#F5F4F2', accent: '#D97757' },
@@ -343,6 +342,31 @@ const AboutCode4tw: Page = () => (
   </div>
 );
 
+/* H1-02d Agenda：今天三小時的流程 */
+const AgendaRow = ({ tag, color, title, time }: { tag: string; color: string; title: string; time: string }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 32, padding: '24px 0', borderBottom: `1px solid ${border}` }}>
+    <span style={{ fontSize: 32, fontWeight: 800, color, width: 200, flexShrink: 0, fontFamily: 'var(--osd-font-display)' }}>{tag}</span>
+    <span style={{ fontSize: 34, color: 'var(--osd-text)', flex: 1 }}>{title}</span>
+    <span style={{ fontSize: 28, color: muted, fontFamily: mono, flexShrink: 0 }}>{time}</span>
+  </div>
+);
+
+const Agenda: Page = () => (
+  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
+    <style>{styles}</style>
+    <PageHead eyebrow="TODAY · 3 HOURS">Here's the plan</PageHead>
+    <div style={{ marginTop: 40, animation: 'fadeUp 0.5s ease 0.12s both' }}>
+      <AgendaRow tag="Hour 1" color={accentH1} title="Install the tools + Vibe vs AI Coding" time="14:00" />
+      <AgendaRow tag="Hour 2" color={accentH2} title="Learn Claude Code + SDD" time="15:00" />
+      <AgendaRow tag="Hour 3" color={accentH3} title="Build your site & ship it" time="16:00" />
+    </div>
+    <p style={{ fontSize: 32, color: muted, marginTop: 36, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+      By the end, <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>everyone leaves with a live URL</span>.
+    </p>
+    <Footer accent={accentH1} />
+  </div>
+);
+
 /* H1-03 兩個舉手 */
 const HandsUp: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
@@ -433,23 +457,21 @@ const Switch: Page = () => (
   </div>
 );
 
-/* H1-07b 掃 QR：拿到簡報連結（之後複製指令用） */
-const ScanQr: Page = () => (
-  <div style={{ ...fill, display: 'flex', alignItems: 'center', gap: 100, padding: 120 }}>
+/* H1-02c 開場就請大家打開簡報（之後複製指令用） */
+const OpenSlides: Page = () => (
+  <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 120px' }}>
     <style>{styles}</style>
-    <div style={{ width: 360, height: 360, borderRadius: 28, background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28, boxSizing: 'border-box', flexShrink: 0, animation: 'fadeUp 0.5s ease both' }}>
-      <img src={slidesQr} alt="Slides QR code" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    <div style={{ animation: 'fadeUp 0.5s ease both' }}>
+      <Eyebrow color={accentH1}>FIRST THING — DO THIS NOW</Eyebrow>
+      <Title size={96}>Open these slides<br />on your own screen</Title>
     </div>
-    <div style={{ flex: 1 }}>
-      <div style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}>
-        <Eyebrow color={accentH1}>SCAN THIS FIRST</Eyebrow>
-        <Title size={96}>Open these slides<br />on your phone</Title>
-      </div>
-      <p style={{ fontSize: 36, color: muted, marginTop: 36, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.16s both' }}>
-        Today you'll <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>copy a few commands</span> from these slides —
-        scan the QR and keep them open so you can copy as we go.
-      </p>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 18, marginTop: 40, padding: '20px 32px', borderRadius: 14, background: surface, border: `1px solid ${accentH1}`, alignSelf: 'flex-start', animation: 'fadeUp 0.5s ease 0.12s both' }}>
+      <Icon name="globe" size={32} color={accentH1} />
+      <span style={{ fontSize: 32, color: 'var(--osd-text)' }}>The link is on the <span style={{ color: accentH1, fontWeight: 700 }}>Luma event page</span></span>
     </div>
+    <p style={{ fontSize: 34, color: muted, marginTop: 36, lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+      Keep it open the whole time. Later you'll <span style={{ color: 'var(--osd-text)', fontWeight: 700 }}>copy a few commands</span> straight from these slides.
+    </p>
     <Footer accent={accentH1} />
   </div>
 );
@@ -829,14 +851,17 @@ const CloneStep: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
     <PageHead eyebrow="[DO] STEP 1 · CLONE" eyebrowColor={accentH3}>Grab the template</PageHead>
-    <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
+    <p style={{ fontSize: 30, color: muted, marginTop: 20, animation: 'fadeUp 0.5s ease 0.06s both' }}>
+      Copy these two lines from the slides and paste them into Warp:
+    </p>
+    <div style={{ marginTop: 24, animation: 'fadeUp 0.5s ease 0.1s both' }}>
       <WindowShell label="Warp · Terminal" accent={accentH3}>
-        <div><span style={{ color: codeGreen }}>$</span> git clone https://github.com/Michael0520/portfolio-workshop.git</div>
-        <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> cd portfolio-workshop</div>
+        <div><span style={{ color: codeGreen }}>$</span> git clone https://github.com/Michael0520/portfolio-workshop.git portfolio</div>
+        <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> cd portfolio</div>
       </WindowShell>
     </div>
-    <p style={{ fontSize: 32, color: muted, marginTop: 32, lineHeight: 1.5, animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      <span style={{ color: 'var(--osd-text)' }}>clone</span> = copy the whole template from the web onto your computer. Hand up if stuck.
+    <p style={{ fontSize: 30, color: muted, marginTop: 28, lineHeight: 1.5, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+      <span style={{ color: 'var(--osd-text)' }}>clone</span> = copy the whole template onto your computer. Hand up if stuck.
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -851,13 +876,17 @@ const DevStep: Page = () => (
       <WindowShell label="Warp · Terminal" accent={accentH3}>
         <div><span style={{ color: codeGreen }}>$</span> pnpm install</div>
         <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> pnpm dev</div>
-        <div style={{ marginTop: 12, color: codeGreen, display: 'flex', alignItems: 'center', gap: 10 }}>
-          <Icon name="check" size={28} color={codeGreen} /> Ready
+        <div style={{ marginTop: 12, color: muted }}>▲ Next.js 16</div>
+        <div style={{ color: muted }}>- Local: http://localhost:3000</div>
+        <div style={{ color: codeGreen, display: 'flex', alignItems: 'center', gap: 10, marginTop: 4 }}>
+          <Icon name="check" size={28} color={codeGreen} /> Ready in 2s
         </div>
-        <div style={{ color: muted }}>→ open your browser at localhost:3000</div>
       </WindowShell>
     </div>
-    <div style={{ marginTop: 28, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+    <p style={{ fontSize: 28, color: muted, marginTop: 24, animation: 'fadeUp 0.5s ease 0.18s both' }}>
+      When you see <span style={{ color: accentH3, fontFamily: mono }}>localhost:3000</span>, open it in your browser.
+    </p>
+    <div style={{ marginTop: 20, animation: 'fadeUp 0.5s ease 0.24s both' }}>
       <HandUp accent={accentH3}>Hand up when you see the template site</HandUp>
     </div>
     <Footer accent={accentH3} />
@@ -870,11 +899,11 @@ const EditResume: Page = () => (
     <style>{styles}</style>
     <PageHead eyebrow="[DO] MAKE IT YOURS WITH CLAUDE CODE" eyebrowColor={accentH3}>Edit your info in one line</PageHead>
     <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.1s both' }}>
-      <WindowShell label="Claude Code (inside portfolio-workshop)" accent={accentH3}>
-        <div style={{ fontFamily: 'var(--osd-font-body)', fontSize: 30, lineHeight: 1.65, color: 'var(--osd-text)' }}>
-          Change this site's name to <span style={{ color: accentH3 }}>[your name]</span>,
-          city to <span style={{ color: accentH3 }}>[your city]</span>,
-          and the intro to <span style={{ color: accentH3 }}>[one line about you]</span>.
+      <WindowShell label="Claude Code (inside the portfolio folder)" accent={accentH3}>
+        <div style={{ fontFamily: 'var(--osd-font-body)', fontSize: 28, lineHeight: 1.65, color: 'var(--osd-text)' }}>
+          Read <span style={{ color: accentH3, fontFamily: mono }}>src/data/resume.tsx</span> and change the name to <span style={{ color: accentH3 }}>[your name]</span>,
+          the location to <span style={{ color: accentH3 }}>[your city]</span>,
+          and the description to <span style={{ color: accentH3 }}>[one line about you]</span>.
         </div>
       </WindowShell>
     </div>
@@ -904,14 +933,17 @@ const GithubRepo: Page = () => (
 const PushStep: Page = () => (
   <div style={{ ...fill, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 120 }}>
     <style>{styles}</style>
-    <PageHead eyebrow="[DO] PUSH IT UP" eyebrowColor={accentH3}>Copy the commands GitHub gives you</PageHead>
-    <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease 0.1s both' }}>
+    <PageHead eyebrow="[DO] PUSH IT UP" eyebrowColor={accentH3}>Push it to GitHub</PageHead>
+    <div style={{ marginTop: 32, animation: 'fadeUp 0.5s ease 0.1s both' }}>
       <WindowShell label="Warp · Terminal" accent={accentH3}>
+        <div style={{ color: muted, fontSize: 24 }}># first time only — log in to GitHub</div>
+        <div><span style={{ color: codeGreen }}>$</span> gh auth login</div>
+        <div style={{ marginTop: 16, color: muted, fontSize: 24 }}># then push (the two lines GitHub gives you)</div>
         <div><span style={{ color: codeGreen }}>$</span> git remote add origin &lt;your repo URL&gt;</div>
         <div style={{ marginTop: 8 }}><span style={{ color: codeGreen }}>$</span> git push -u origin main</div>
       </WindowShell>
     </div>
-    <p style={{ fontSize: 32, color: muted, marginTop: 32, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+    <p style={{ fontSize: 30, color: muted, marginTop: 28, animation: 'fadeUp 0.5s ease 0.22s both' }}>
       Don't want to type? Just ask Claude Code to push for you. Hand up if stuck.
     </p>
     <Footer accent={accentH3} />
@@ -941,9 +973,10 @@ const DeployStep: Page = () => (
     <div style={{ marginTop: 48, animation: 'fadeUp 0.5s ease 0.12s both' }}>
       <DeployFlow />
     </div>
-    <p style={{ fontSize: 32, color: muted, marginTop: 56, display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center', animation: 'fadeUp 0.5s ease 0.2s both' }}>
-      vercel.com → New Project → Import repo → Deploy. ~30 seconds.
-      <span style={{ color: accentH3, display: 'inline-flex', alignItems: 'center', gap: 8 }}>Hand up when live <Icon name="hand" size={28} color={accentH3} /></span>
+    <p style={{ fontSize: 30, color: muted, marginTop: 48, textAlign: 'center', lineHeight: 1.6, animation: 'fadeUp 0.5s ease 0.2s both' }}>
+      vercel.com → <span style={{ color: accentH3 }}>Sign in with GitHub</span> → New Project → Import repo → Deploy. ~30 seconds.
+      <br />
+      <span style={{ color: accentH3, display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 12 }}>Hand up when live <Icon name="hand" size={28} color={accentH3} /></span>
     </p>
     <Footer accent={accentH3} />
   </div>
@@ -1112,15 +1145,17 @@ export const notes: (string | undefined)[] = [
   // H1
   `【中文】\n下午好，我是 Michael，今天下午這三個小時都會跟大家一起。\n先謝謝大家來到台東知本 —— TDF 是台灣最特別的數位遊牧節，這裡的精神就是「把作品 ship 出去」。\nship 這個字今天會一直出現，意思就是「把東西真的做出來、放到網路上、讓別人連得到」。\n三小時後你帶走的，不會只是一個成品，而是一整套「用 AI 把東西做出來」的工作方式。\n我們分三段走：第一小時把工具裝好、把觀念講清楚；第二小時學怎麼用 Claude Code；第三小時你親手做一個網站、推上線。\n放輕鬆，今天完全不需要你會寫程式。\n\n———\n\n【English】\nGood afternoon, I'm Michael. I'll be with you for these three hours.\nThank you all for coming to Taitung. The idea of TDF is simple: make something and "ship" it.\n"Ship" means: build a thing, put it online, and let people see it. You'll hear this word a lot today.\nIn three hours, you won't just get a finished site. You'll get a way to build things with AI.\nWe do it in three parts: hour one, install the tools. Hour two, learn Claude Code. Hour three, you build a real website and ship it.\nRelax — you don't need to know how to code today.`,
   `【中文】\n簡單介紹我自己：我是 Web Developer，平常就在寫網頁；同時也是 Code for Taiwan 的成員，做開源社群的東西。\n我的網站是 michaello.me，GitHub 是 Michael0520。\n先說一下，我的英文沒有很流利，等下講解時如果哪裡卡卡的、或用詞怪怪的，請大家多多包容，也歡迎隨時打斷我、問我。\n\n———\n\n【English】\nQuick intro. I'm a web developer — I build websites. I'm also a member of Code for Taiwan.\nMy site is michaello.me, and my GitHub is Michael0520.\nOne thing: my English is not very good. If I stop or use a strange word, please be kind.\nAnd feel free to stop me and ask anytime.`,
+  // OpenSlides
+  `【中文】\n開始之前，請大家現在就做一件事：打開今天這份簡報。\n連結就在這場活動的 Luma 頁面上，用你的手機或筆電點開，整場都開著別關。\n為什麼？因為等一下安裝、還有後面動手的時候，會有幾行指令要複製。你直接從自己螢幕上的簡報複製、貼上就好，比一個字一個字打快很多、也不會打錯。\n打開簡報的，舉個手讓我看看。\n\n———\n\n【English】\nBefore we start, please do one thing right now: open today's slides.\nThe link is on this event's Luma page — open it on your phone or laptop, and keep it open the whole time.\nWhy? Because later, during install and the hands-on parts, there are a few commands to copy. You can copy them straight from the slides on your own screen — much faster than typing, and no typos.\nRaise your hand once you have the slides open.`,
   // AboutCode4tw
   `【中文】\n這裡花一分鐘介紹一下我的團隊 —— Code for Taiwan。\n它是一個公民科技社群，免費、開放，每個月有一次線上聚會，大家一起分享、一起學。\n不管你是工程師、設計師、PM、還是只是有興趣，背景完全不限，都歡迎來。\n我們的核心理念是「重觀念、不只重工具」—— 比起教你用某個工具，更想讓你懂背後的「為什麼」。\n今天這場 workshop 其實也是這個精神：你不用會寫程式，但你會帶走一套思考方式。\n官網是 codefortaiwan.org，有興趣回家可以看看。\n\n———\n\n【English】\nLet me take a minute to talk about my team — Code for Taiwan.\nIt's a tech community. It's free and open, with one online meetup every month where we share and learn.\nDeveloper, designer, PM, or just interested — everyone is welcome.\nOur main idea is "concepts over tools." We want you to understand why, not just how.\nToday's workshop has the same spirit: you don't need to code, but you'll take home a way of thinking.\nThe site is codefortaiwan.org — take a look when you get home.`,
+  // Agenda
+  `【中文】\n快速看一下今天三個小時怎麼走。\n第一小時，我們把工具裝好，再講清楚 Vibe 跟 AI Coding 的差別。\n第二小時，學怎麼用 Claude Code，還有一個讓 AI 變可靠的習慣，叫 SDD。\n第三小時最好玩 —— 你親手做一個網站、推上線。\n所以離開前，每個人都會有一個自己的網址。\n\n———\n\n【English】\nQuick look at how the three hours go.\nHour one, we install the tools and get the difference between Vibe and AI Coding.\nHour two, we learn Claude Code, plus one habit that makes AI reliable, called SDD.\nHour three is the fun part — you build a website and ship it.\nSo before you leave, everyone will have their own URL.`,
   `【中文】\n動手之前，先做兩個小調查，讓我抓一下大家的程度。\n第一個問題：過去 12 個月裡，有用 AI 寫過 code 的，請舉手。\n（停頓，掃一下，記個大概比例）好，放下。\n第二個：有真的用 AI 把一個網站 ship 上線過的，再舉一次手。\n（停頓，記比例）OK，大概知道大家的位置了 —— 沒舉手完全沒關係，今天就是從頭帶你做一次。\n\n———\n\n【English】\nBefore we start, two quick questions.\nFirst: in the last 12 months, who has written code with AI? Please raise your hand. (pause, look around) Okay, hands down.\nSecond: who has put a website online with AI? Raise your hand again. (pause)\nGreat — now I know where everyone is. If you didn't raise your hand, that's fine. We start from zero today.`,
   `【中文】\n我先給你今天最重要的一條分界線，這條線你聽懂了，今天就值回票價了 —— 用 AI 寫東西，其實有兩種模式（mode）。\n很多人沒意識到這件事，結果用得卡卡的。\n我們先把這兩種分清楚。\n\n———\n\n【English】\nHere is the most important idea today. Get this, and the day is worth it.\nBuilding with AI has two modes.\nMany people don't know this, and that's why it feels hard.\nLet's look at the two clearly.`,
   `【中文】\n第一種叫 Vibe Coding —— 你就是跟 AI 一直聊、它給你什麼你就收什麼、能跑起來就好。\n這種是「AI 主導」，你比較被動。\n第二種叫 AI Coding —— 你心裡有目標、會主動挑方案、看到不對會拒絕、關鍵時刻會跳進去改。\n這種是「你主導」。\n兩種沒有誰高誰低，但差別很大。\n\n———\n\n【English】\nThe first is Vibe Coding. You just chat with the AI and take what it gives you. You're happy if it runs.\nHere the AI leads, and you just follow.\nThe second is AI Coding. You know your goal, you choose, you say no when it's wrong, and you step in when it matters.\nHere you lead.\nNeither one is better. But they are very different.`,
   `【中文】\n一句話總結：Vibe 是 AI 主導，AI Coding 是人主導。\n（這句慢慢講，停一下）說到底，AI 只是工具，真正的決策者是你。\n今天我想做的，就是把你從第一種，帶到第二種。\n\n———\n\n【English】\nIn one line: Vibe means the AI leads. AI Coding means you lead. (say it slowly)\nAI is just a tool. You are the one who decides.\nToday I want to move you from the first mode to the second.`,
   `【中文】\n要強調：這兩種不是對立的，是看情況用。\n你做個玩具、週末隨手試個點子 —— 用 vibe 完全沒問題，輕鬆又快。\n但只要這東西你要長期維護、要上線給別人用、是個正式的專案 —— 就該切到 AI Coding。\n高手是兩種都會、知道什麼時候用哪一種。\n今天的目標就是帶你學會切換。\n\n———\n\n【English】\nTo be clear: these two are not enemies. You pick based on the case.\nA toy, a quick weekend idea — Vibe is fine. Easy and fast.\nBut if you want to keep it for a long time, or put it online for real people — use AI Coding.\nThe smart thing is to know both, and know when to use each.\nToday's goal is to help you switch.`,
-  // ScanQr
-  `【中文】\n在開始裝東西之前，先請大家拿出手機，掃一下螢幕上這個 QR code —— 它會打開今天這份簡報。\n為什麼要掃？因為等一下安裝、還有後面動手的時候，會有幾行指令需要你複製，從手機上的簡報複製會比你自己一個字一個字打快很多、也不容易打錯。\n掃好、打開簡報的，舉個手讓我看看。\n\n———\n\n【English】\nBefore we install anything, please take out your phone and scan the QR code on the screen. It opens these slides.\nWhy? Later, you'll need to copy a few commands.\nCopying from the slides on your phone is much faster, and you won't type it wrong.\nRaise your hand once you scan it and the slides are open.`,
   `【中文】\n好，觀念先放這。動手之前，我們得先把工具裝好。\n今天要裝四樣東西：Warp（一個終端機）、Node 加 pnpm（跑網站的引擎）、Git（上傳用的）、還有 Claude Code（今天的主角）。\n聽起來有點多，但我會一步一步帶，每一步裝不起來就舉手，助教會立刻過去幫你。\n我們不趕，等大家都裝好再往下。\n\n———\n\n【English】\nOkay, enough ideas. Before we build, we need to install the tools.\nFour things today: Warp (a terminal), Node + pnpm (the engine that runs the site), Git (for uploading), and Claude Code (today's star).\nIt sounds like a lot, but I'll go step by step. If a step doesn't work, raise your hand and a helper will come.\nNo rush — we move on when everyone is ready.`,
   `【中文】\n第一個，Warp。先解釋一下「終端機」是什麼 —— 就是那個可以打指令的黑色視窗，工程師每天都在用。\nWarp 是一個比較新、比較好用的終端機，介面好看、還內建 AI。\n我們一起到官網 warp.dev，點 Download，照著裝。（帶大家到官網實際操作，不要只是念）\n裝好、打得開的，舉個手讓我看看。\n\n———\n\n【English】\nFirst, Warp. Let me explain what a "terminal" is — it's the black window where you type commands. Developers use it every day.\nWarp is a newer, nicer terminal — it looks clean and has AI built in.\nLet's go to warp.dev together, click Download, and install it. (take them to the site, don't just read)\nWhen it's installed and opens, raise your hand so I can see.`,
   `【中文】\n第二個，Node 和 pnpm —— 這是讓網站能在你電腦上跑起來的引擎。\n我們到 nodejs.org 的下載頁，選 macOS、nvm、pnpm 這幾個選項，官網會直接給你幾行指令。\n照著複製、貼到 Warp 裡：先裝 nvm，再 nvm install 24 裝 Node，最後 corepack enable pnpm。\nGit 大部分 Mac 已經內建，打 git --version 確認一下就好。（一樣帶大家到官網複製，不要自己手打）\n\n———\n\n【English】\nSecond, Node and pnpm — the engine that runs a website on your computer.\nGo to the nodejs.org download page. Pick macOS, nvm, pnpm, and the site gives you a few lines.\nCopy them into Warp: install nvm first, then nvm install 24 for Node, then corepack enable pnpm.\nGit is usually already on your Mac — just run git --version to check. (again, copy from the site, don't type by hand)`,
@@ -1135,17 +1170,17 @@ export const notes: (string | undefined)[] = [
   `【中文】\n我把今天最重要的一句話送給你：當 AI 說「做完了」，你要反問一句 —— 做完什麼？（停一下）如果你答不出來，那不是 AI 的問題，是你從一開始就沒定義「什麼叫做完」。\nSDD 要解的就是這件事 —— 在動手之前，先把「做完」的標準寫下來。\n\n———\n\n【English】\nHere's the most important line of the day: when the AI says "Done," ask back — done with what? (pause)\nIf you can't answer, it's not the AI's fault. It's that you never said what "done" means.\nThat's what SDD fixes: before you start, write down what "done" means.`,
   `【中文】\n怎麼把要什麼寫清楚？三個階段，而且用人話寫就好，不用很工程。\n第一，釐清你要什麼 —— 給誰看、為了什麼，這定方向。\n第二，怎麼做 —— 用什麼版型、放哪些區塊、有什麼限制，這定範圍。\n第三，拆成一條條可以勾選的任務 —— 每條都能說「做到了沒」。\n整個循環一句話：寫清楚 → AI 做 → 拿它來驗 → ship。\n\n———\n\n【English】\nHow do you write down what you want? Three steps, and just use normal words — nothing technical.\nOne, what you want — for who, and why. This sets the direction.\nTwo, how to do it — the layout, the parts, the limits. This sets the scope.\nThree, break it into small tasks you can check — each one is done or not done.\nThe whole loop in one line: write it clearly → AI builds → check it → ship.`,
   `【中文】\n來試一下手感，讓你感覺一下。\n打開 Claude Code，跟它說：「幫我在桌面建一個資料夾叫 my-first，裡面放一個寫著我名字的文字檔。」然後看 —— 它會先給你計畫，你按核可，它才動手做。\n這個「計畫 → 核可 → 執行」的節奏，就是 AI Coding 的手感。\n（走動，看看大家的反應，鼓勵一下）\n\n———\n\n【English】\nLet's try it. Open Claude Code and say: "Make a folder on my Desktop called my-first, with a text file that has my name in it."\nThen watch — it gives a plan first, you say OK, and then it acts.\nThat order — plan, OK, run — is the feel of AI Coding. (walk around, watch, cheer them on)`,
-  `【中文】\n你已經會用了。\n第三段，我們把這整套用在一個真的網站上：clone 一個現成的範本、用 Claude Code 改成你的、然後推上線。\n我保證，離開這個房間前，每個人都會有自己的網址。\n現在休息 10 分鐘，16:00 準時回來。\n\n———\n\n【English】\nYou can use it now. In hour three, we use all of this on a real website.\nWe clone a ready-made template, make it yours with Claude Code, then ship it.\nI promise — before you leave this room, everyone will have their own URL.\nTake a 10-minute break, back at 16:00.`,
+  `【中文】\n你已經會用了。\n第三段，我們把這整套用在一個真的網站上：clone 一個現成的範本、用 Claude Code 改成你的、然後推上線。\n而且很棒的是，離開這個房間前，每個人都會有自己的網址。\n現在休息 10 分鐘，16:00 回來。\n\n———\n\n【English】\nYou can use it now. In hour three, we use all of this on a real website.\nWe clone a ready-made template, make it yours with Claude Code, then ship it.\nAnd the fun part — before you leave this room, everyone will have their own URL.\nTake a 10-minute break, back at 16:00.`,
   // H3
-  `【中文】\n歡迎回來，最後一小時了，這一小時幾乎全程動手。\n我們會抓一個現成的網站範本，用 Claude Code 把它改成你的，然後推上線。\n再強調一次：離開前，每個人都會有自己的網址，這是今天的承諾。\n\n———\n\n【English】\nWelcome back. Last hour, and it's almost all hands-on.\nWe'll take a ready-made website template, make it yours with Claude Code, then ship it.\nAgain: before you leave, everyone will have their own URL. That's the promise.`,
+  `【中文】\n歡迎回來，最後一小時了，這一小時幾乎全程動手。\n我們會抓一個現成的網站範本，用 Claude Code 把它改成你的，然後推上線。\n再說一次：離開前，每個人都會有自己的網址，我們一起把它做出來。\n\n———\n\n【English】\nWelcome back. Last hour, and it's almost all hands-on.\nWe'll take a ready-made website template, make it yours with Claude Code, then ship it.\nAgain: before you leave, everyone will have their own URL. Let's make it happen together.`,
   `【中文】\n動手之前，先花一分鐘看一份 spec —— 這是我提前幫你寫好的個人站 spec。\n它有五個區塊：Goal 是這個網站的目的、Outcomes 是訪客看完帶走什麼、Non-goals 是明說不做的事、Constraints 是限制、Success criteria 是怎麼算成功。\n等一下你就會照著這份去改。\n看起來不嚇人吧？就是用人話講清楚要什麼。\n\n———\n\n【English】\nBefore we build, take a minute to read a spec. I wrote this one for the personal site.\nIt has five parts: Goal is the site's purpose. Outcomes is what a visitor gets. Non-goals is what you will NOT do. Constraints are the limits. Success criteria is how you know it worked.\nYou'll edit based on this in a moment. Not scary, right? It just says clearly what you want.`,
   `【中文】\n為什麼一定要這五塊？因為少了任何一塊，AI 就會自由發揮。\n沒有 Goal，它就做一個很普通的 portfolio；沒有 Non-goals，它會加一堆你根本沒要的功能；沒有 Success criteria，你自己也不知道到底做好了沒。\n所以這五塊，其實就是你給 AI 的一份「契約」。\n\n———\n\n【English】\nWhy these five parts? Because if you skip one, the AI just guesses.\nNo Goal — it builds a plain portfolio. No Non-goals — it adds things you didn't ask for. No Success criteria — you don't even know if it's done.\nSo these five parts are like a "deal" you give the AI.`,
-  `【中文】\n第一步，clone。\n在 Warp 裡打 git clone 加上範本的網址，再 cd 進那個資料夾。\nclone 的意思就是把網路上的範本，整包複製到你自己的電腦。\n網址我會貼在大白板上，照著打就好。\n卡住的舉手。\n（走動巡視，看看大家有沒有打錯字）\n\n———\n\n【English】\nStep one, clone. In Warp, type git clone and the template's URL, then cd into that folder.\nClone just means: copy the whole template from the web to your computer.\nI'll put the URL on the big board — just type it. Raise your hand if you're stuck. (walk around, check for typos)`,
-  `【中文】\n第二步，跑起來。\n打 pnpm install 把需要的套件裝好，再打 pnpm dev 把它跑起來。\n看到 Ready，就打開瀏覽器、輸入 localhost:3000，你應該會看到一個現成的範本網站。\n看到的舉手。\n（這頁多留時間，這是第一個動手關卡，沒看到的我個別過去看）\n\n———\n\n【English】\nStep two, run it. Type pnpm install to get the packages, then pnpm dev to start it.\nWhen you see Ready, open your browser at localhost:3000 — you should see the template site.\nRaise your hand when you see it. (give this extra time — first hands-on step; I'll help anyone who can't see it)`,
-  `【中文】\n現在最有趣的部分：用 Claude Code 把它改成你的。\n先確認你是在 portfolio-workshop 這個資料夾裡打開 claude，然後照著念：「幫我把這個網站的名字改成你的名字、城市改成你住的城市、自我介紹改成一句話。」它會先給計畫、你核可、它就改好了。\n改完重新整理網頁、看到自己資料的，舉手。\n（走動，這關有人會卡，個別救援）\n\n———\n\n【English】\nNow the fun part: make it yours with Claude Code.\nFirst, make sure you opened claude inside the portfolio-workshop folder. Then say: "Change this site's name to my name, the city to where I live, and the intro to one line about me."\nIt plans, you say OK, it edits. Refresh the page and raise your hand when you see your own info. (walk around — some get stuck here, help them)`,
+  `【中文】\n第一步，clone。\n螢幕上有兩行指令，直接從投影片（剛剛掃的 QR）複製，貼到 Warp 裡按 enter 就好，不用自己打。\nclone 的意思就是把網路上的範本，整包複製到你自己的電腦。\n第二行 cd portfolio 是走進那個資料夾。\n卡住的舉手。\n（走動巡視，看看大家有沒有貼錯）\n\n———\n\n【English】\nStep one, clone.\nThere are two lines on screen. Copy them straight from the slides (the QR you just scanned), paste into Warp, and press enter — no need to type.\nClone just means: copy the whole template from the web to your computer.\nThe second line, cd portfolio, walks into that folder.\nRaise your hand if you're stuck. (walk around, check for paste errors)`,
+  `【中文】\n第二步，把它跑起來。\n一樣，兩行指令直接從投影片複製、貼到 Warp：pnpm install 把需要的套件裝好，pnpm dev 把網站跑起來。\n等它出現一個 localhost:3000 的網址，就打開瀏覽器、輸入那個網址，你應該會看到一個現成的範本網站。\n看到的舉手。\n（這頁多留時間，這是第一個動手關卡，沒看到的我個別過去看）\n\n———\n\n【English】\nStep two, run it.\nAgain, copy the two lines from the slides into Warp: pnpm install gets the packages, pnpm dev starts the site.\nWhen it shows a localhost:3000 link, open that link in your browser — you should see the template site.\nRaise your hand when you see it. (give this extra time — first hands-on step; I'll help anyone who can't see it)`,
+  `【中文】\n現在最有趣的部分：用 Claude Code 把它改成你的。\n先確認你是在 portfolio 這個資料夾裡打開 claude。\n這個範本所有內容都在同一個檔案：src/data/resume.tsx，所以我們直接叫 Claude 讀那個檔來改。\n照著念：「幫我讀 src/data/resume.tsx，把名字改成我的名字、城市改成我住的城市、自我介紹改成一句話。」\n它會先給計畫、你核可、它就改好了。\n改完重新整理網頁、看到自己資料的，舉手。\n（走動，這關有人會卡，個別救援）\n\n———\n\n【English】\nNow the fun part: make it yours with Claude Code.\nFirst, make sure you opened claude inside the portfolio folder.\nAll the content in this template is in one file: src/data/resume.tsx, so we just tell Claude to read that file.\nSay: "Read src/data/resume.tsx and change the name to my name, the location to where I live, and the description to one line about me."\nIt plans, you say OK, it edits. Refresh the page and raise your hand when you see your own info. (walk around — some get stuck here, help them)`,
   `【中文】\n資料是你的了，現在把它放上 GitHub。\n到 github.com/new，名字隨便取，記得選 Public、然後不要勾任何初始化選項，按 Create。\n這幾個設定很重要，尤其「不要勾初始化」，不然等下推的時候會衝突。\n\n———\n\n【English】\nYour info is in. Now put it on GitHub.\nGo to github.com/new. Name it anything. Choose Public, and don't check any extra option. Then click Create.\nThese settings matter — especially "don't check," or the upload will break later.`,
-  `【中文】\nCreate 完，GitHub 會直接給你兩行指令，你把它複製、貼到 Warp 裡跑就好。\n如果你不想自己打，也可以直接請 Claude Code 幫你推上去 —— 跟它說「幫我把這個專案推到 GitHub」就行。\n卡住的舉手。\n\n———\n\n【English】\nAfter Create, GitHub gives you two lines. Copy them and run them in Warp.\nIf you don't want to type, just ask Claude Code to do it — say "push this project to GitHub."\nRaise your hand if you're stuck.`,
-  `【中文】\n最後一步，上線。\n到 vercel.com，點 New Project，Import 你剛剛建的那個 repo，全部用預設、按 Deploy。\n大概 30 秒，它就會給你一個網址。\nDeploy 成功、拿到網址的，舉手讓我看看。\n\n———\n\n【English】\nLast step, go live. Go to vercel.com, click New Project, pick the repo you just made, keep everything default, click Deploy.\nIn about 30 seconds it gives you a URL.\nRaise your hand when it works and you have a URL.`,
+  `【中文】\n第一行 gh auth login 是登入 GitHub，第一次要做一次。貼進 Warp 後照它的問題選（選 GitHub.com、選用瀏覽器登入），它會開瀏覽器讓你點一下就好。\n登入之後，剛剛 Create repo 時 GitHub 給你的那兩行（git remote add 跟 git push），直接複製貼到 Warp 跑。\n如果懶得處理，也可以直接請 Claude Code 幫你推 —— 跟它說「幫我把這個專案推到 GitHub」。\n推成功的舉手。這關登入最容易卡，卡住就舉手。\n\n———\n\n【English】\nThe first line, gh auth login, logs you in to GitHub — you do this once. Paste it in Warp, follow the questions (pick GitHub.com, login with a browser), it opens your browser and you click once.\nAfter that, the two lines GitHub gave you when you made the repo (git remote add and git push) — just copy and run them in Warp.\nIf you'd rather not deal with it, just ask Claude Code to push for you — say "push this project to GitHub."\nRaise your hand when it's pushed. This login step is the most common place to get stuck — hand up if you do.`,
+  `【中文】\n最後一步，上線。\n到 vercel.com，第一次先用「Sign in with GitHub」登入 —— 用你的 GitHub 帳號一鍵登入就好，不用另外註冊。\n登入後點 New Project，Import 你剛剛建的那個 repo，全部用預設、按 Deploy。\n大概 30 秒，它就會給你一個網址。\nDeploy 成功、拿到網址的，舉手讓我看看。\n\n———\n\n【English】\nLast step, go live. Go to vercel.com. First time, click "Sign in with GitHub" — just use your GitHub account, no separate sign-up.\nThen click New Project, pick the repo you just made, keep everything default, click Deploy.\nIn about 30 seconds it gives you a URL.\nRaise your hand when it works and you have a URL.`,
   `【中文】\n現在，你有自己的網址了！這是今天的高潮。\n兩件事：第一，把網址貼到共享白板上，大家互相看看彼此做的；第二，截個圖、分享出去，這是你今天的紀念。\n這個感覺 —— 就是 ship。\n（這裡能量拉高，幫大家鼓掌一下）\n\n———\n\n【English】\nNow — you have your own URL! This is the best moment of the day.\nTwo things: one, post your URL on the shared board so everyone can see each other's work. Two, take a screenshot and share it — that's your memory of today.\nThis feeling — this is shipping. (raise the energy, clap for everyone)`,
   `【中文】\n網站雖然上線了，但它還是「範本的樣子」，不夠像你。\n想讓它更專業，與其自己慢慢調 CSS，不如裝一個專門做設計的 skill。\nClaude Code 也能裝 skill，指令就是 npx skills add。\nskills.sh 是 Vercel 做的開放目錄，你可以去逛逛，排行榜第一名 find-skills 有一百五十萬次安裝，很多好東西。\n\n———\n\n【English】\nYour site is live, but it still looks like the template — not really you yet.\nTo make it nicer, instead of editing the design by hand, install a design skill.\nClaude Code can add skills too — the command is npx skills add.\nskills.sh is an open list made by Vercel — go look. The top one, find-skills, has 1.5 million installs. Lots of good stuff.`,
   `【中文】\n我帶你裝一個我自己很愛、而且免費的設計 skill —— Impeccable，它的作用就是「教你的 AI 設計品味」。\n在 Warp 裡打 npx skills add pbakaus/impeccable。\n裝完之後，你就多了 23 個設計指令、7 個參考領域、還有 27 條反模式偵測規則。\n它是從 Anthropic 官方的 frontend-design skill 演化來的。\n\n———\n\n【English】\nLet me have you install a design skill I love — it's free. It's called Impeccable.\nIts job is to teach your AI good design taste.\nIn Warp, type npx skills add pbakaus/impeccable.\nAfter it's in, you get 23 design commands, 7 design topics, and 27 rules. It comes from Anthropic's frontend-design skill.`,
@@ -1155,8 +1190,8 @@ export const notes: (string | undefined)[] = [
 ];
 
 export default [
-  Cover, Intro, AboutCode4tw, HandsUp, Divider, VibeVsAI, OneLine, Switch,
-  ScanQr, SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
+  Cover, Intro, OpenSlides, AboutCode4tw, Agenda, HandsUp, Divider, VibeVsAI, OneLine, Switch,
+  SetupOverview, SetupWarp, SetupNode, SetupClaude, CheckEnv, H1Close,
   H2Open, OpenClaude, PlanMode, Pains, DoneWhat, SddStages, TryClaude, H2Close,
   H3Open, SpecWalk, SpecMissing, CloneStep, DevStep, EditResume, GithubRepo, PushStep, DeployStep, YouDidIt, SkillsSh, Impeccable, Polish, Recap, ThankYou,
 ] satisfies Page[];
